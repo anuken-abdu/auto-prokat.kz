@@ -21,8 +21,13 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 /* HEADER */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .4s}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{font-family:var(--fh);font-size:1rem;font-weight:900;letter-spacing:2px;text-transform:uppercase}
-@media(min-width:768px){.logo{font-size:1.15rem;letter-spacing:2.5px}}
+.logo{display:flex;align-items:center}
+.logo img{height:36px;width:auto}
+@media(min-width:768px){.logo img{height:40px}}
+[data-theme="dark"] .logo-dark{display:block}
+[data-theme="dark"] .logo-light{display:none}
+[data-theme="light"] .logo-dark{display:none}
+[data-theme="light"] .logo-light{display:block}
 .hdr-r{display:flex;align-items:center;gap:5px}
 .lang-t{display:flex;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
 .lang-b{padding:5px 10px;font-size:.65rem;font-weight:700;color:var(--text3);transition:var(--t);letter-spacing:.5px}
@@ -154,7 +159,7 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .ftl a:hover{color:var(--gold)}
 .ftc a{display:flex;align-items:center;gap:5px;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}
 .ftc a:hover{color:var(--gold)}
-.ftb{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px}
+.ftb{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:4px}
 .ftcp{font-size:.68rem;color:var(--text3)}.ftdv{font-size:.66rem;color:var(--text3)}.ftdv a{color:var(--gold);font-weight:800}
 
 /* BOT BAR */
@@ -275,7 +280,7 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 <body>
 
 <header class="hdr"><div class="con hdr-in">
-  <a href="#" class="logo">QAZ AUTO RENT</a>
+  <a href="#" class="logo"><img src="images/logo-white.png" alt="QAZ AUTO RENT" class="logo-dark"><img src="images/logo-dark.png" alt="QAZ AUTO RENT" class="logo-light"></a>
   <nav class="nav-d"><a href="#catalog" data-t="nav-catalog">Каталог</a><a href="#advantages" data-t="nav-adv">Преимущества</a><a href="#conditions" data-t="nav-cond">Условия</a><a href="#contacts" data-t="nav-contacts">Контакты</a></nav>
   <div class="hdr-r">
     <div class="lang-t"><button class="lang-b on" onclick="setLang('ru')">RU</button><button class="lang-b" onclick="setLang('kz')">ҚЗ</button></div>
@@ -320,7 +325,7 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
   <h2 class="st reveal" data-t="adv-title">Преимущества сервиса</h2>
   <div class="ag">
     <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 data-t="a1t">Быстро</h3><p data-t="a1d">Оформление за 5 минут. Минимум документов.</p></div>
-    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-t="a2t">Страхование</h3><p data-t="a2d">Полная защита.</p></div>
+    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-t="a2t">Страхование</h3><p data-t="a2d">КАСКО включено. Полная защита.</p></div>
     <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3 data-t="a3t">24/7</h3><p data-t="a3d">Круглосуточная поддержка.</p></div>
     <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 data-t="a4t">Чистота</h3><p data-t="a4d">Мойка перед каждой выдачей.</p></div>
   </div>
@@ -330,11 +335,11 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
   <div class="sl" data-t="co-label">Информация</div>
   <h2 class="st reveal" data-t="co-title">Условия аренды</h2>
   <div class="cog">
-    <div class="co reveal"><div class="conum">1</div><h3 data-t="c1t">Возраст</h3><p data-t="c1d">Минимум 20 лет. Стаж — от 2 лет.</p></div>
+    <div class="co reveal"><div class="conum">1</div><h3 data-t="c1t">Возраст</h3><p data-t="c1d">Минимум 23 года. Стаж — от 2 лет.</p></div>
     <div class="co reveal"><div class="conum">2</div><h3 data-t="c2t">Документы</h3><p data-t="c2d">Удостоверение личности и вод. права.</p></div>
-    <div class="co reveal"><div class="conum">3</div><h3 data-t="c3t">Залог</h3><p data-t="c3d">20 000 – 50 000 ₸. Возврат при сдаче.</p></div>
+    <div class="co reveal"><div class="conum">3</div><h3 data-t="c3t">Залог</h3><p data-t="c3d">50 000 – 300 000 ₸. Возврат при сдаче.</p></div>
     <div class="co reveal"><div class="conum">4</div><h3 data-t="c4t">Оплата</h3><p data-t="c4d">Наличные, перевод, Kaspi.</p></div>
-    <div class="co reveal"><div class="conum">5</div><h3 data-t="c5t">Доставка</h3><p data-t="c5d">5 000 ₸ по Алматы.</p></div>
+    <div class="co reveal"><div class="conum">5</div><h3 data-t="c5t">Доставка</h3><p data-t="c5d">Бесплатно по Алматы.</p></div>
     <div class="co reveal"><div class="conum">6</div><h3 data-t="c6t">Правила</h3><p data-t="c6d">Выезд за область — по согласованию.</p></div>
   </div>
 </div></section>
@@ -353,7 +358,7 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 
 <footer class="ft"><div class="con">
   <div class="ftg">
-    <div><h4>QAZ AUTO RENT</h4><p style="font-size:.75rem;color:var(--text3)" data-t="f-desc">Аренда авто в Алматы. Премиум сервис.</p></div>
+    <div><img src="images/logo-white.png" alt="QAZ AUTO RENT" class="logo-dark" style="height:32px;width:auto;margin-bottom:10px"><img src="images/logo-dark.png" alt="QAZ AUTO RENT" class="logo-light" style="height:32px;width:auto;margin-bottom:10px"><p style="font-size:.75rem;color:var(--text3)" data-t="f-desc">Аренда авто в Алматы. Премиум сервис.</p></div>
     <div class="ftl"><h4 data-t="f-nav">Навигация</h4><a href="#catalog" data-t="nav-catalog">Каталог</a><a href="#conditions" data-t="nav-cond">Условия</a><a href="#contacts" data-t="nav-contacts">Контакты</a></div>
     <div class="ftc"><h4 data-t="f-cont">Контакты</h4><a href="tel:+77070070107"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+7 707 007 01 07</a><a href="https://wa.me/77070070107" target="_blank">WhatsApp</a><a href="https://t.me/+77070070107" target="_blank">Telegram</a></div>
   </div>
