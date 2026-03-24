@@ -11,23 +11,18 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 [data-theme="dark"]{--bg:#0a0a0a;--bg2:#111;--bg3:#1a1a1a;--bg4:#222;--text:#fff;--text2:#b0b0b0;--text3:#707070;--border:#2a2a2a;--card:#141414;--accent:#fff;--gold:#c8a24e;--gold2:#b8923e;--overlay:rgba(0,0,0,.7);--shadow:0 4px 24px rgba(0,0,0,.4);--glass:rgba(10,10,10,.85)}
 [data-theme="light"]{--bg:#fff;--bg2:#f5f5f5;--bg3:#eee;--bg4:#e8e8e8;--text:#0a0a0a;--text2:#555;--text3:#999;--border:#e0e0e0;--card:#fff;--accent:#0a0a0a;--gold:#9a7830;--gold2:#7a6020;--overlay:rgba(0,0,0,.5);--shadow:0 4px 24px rgba(0,0,0,.08);--glass:rgba(255,255,255,.88)}
-:root{--r:12px;--t:.3s cubic-bezier(.25,.1,.25,1);--fh:'Montserrat',sans-serif;--fn:'Bebas Neue',sans-serif;--fe:'Cormorant Garamond',serif}
+:root{--r:12px;--t:.3s cubic-bezier(.25,.1,.25,1);--fh:'Montserrat',sans-serif;--fn:'Bebas Neue',sans-serif}
 html{scroll-behavior:smooth}
 body{font-family:var(--fh);color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .4s,color .4s}
-img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{border:none;cursor:pointer;font-family:inherit;background:none}ul{list-style:none}
+img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{border:none;cursor:pointer;font-family:inherit;background:none}
 ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--text3);border-radius:3px}
 .con{max-width:1320px;margin:0 auto;padding:0 16px}@media(min-width:768px){.con{padding:0 32px}}
-
-/* HEADER */
 .hdr{position:fixed;top:0;left:0;right:0;z-index:1000;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);transition:background .4s}
 .hdr-in{display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{display:flex;align-items:center}
-.logo img{height:36px;width:auto}
+.logo{display:flex;align-items:center}.logo img{height:36px;width:auto}
 @media(min-width:768px){.logo img{height:40px}}
-[data-theme="dark"] .logo-dark{display:block}
-[data-theme="dark"] .logo-light{display:none}
-[data-theme="light"] .logo-dark{display:none}
-[data-theme="light"] .logo-light{display:block}
+[data-theme="dark"] .logo-dark{display:block}[data-theme="dark"] .logo-light{display:none}
+[data-theme="light"] .logo-dark{display:none}[data-theme="light"] .logo-light{display:block}
 .hdr-r{display:flex;align-items:center;gap:5px}
 .lang-t{display:flex;background:var(--bg3);border-radius:6px;overflow:hidden;border:1px solid var(--border)}
 .lang-b{padding:5px 10px;font-size:.65rem;font-weight:700;color:var(--text3);transition:var(--t);letter-spacing:.5px}
@@ -47,8 +42,6 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .btn-hb{display:none;padding:7px 18px;background:var(--text);color:var(--bg);font-weight:800;font-size:.7rem;border-radius:6px;transition:var(--t);letter-spacing:.5px;text-transform:uppercase}
 @media(min-width:1024px){.btn-hb{display:inline-flex}}
 .btn-hb:hover{background:var(--gold);color:#000}
-
-/* MOB MENU */
 .mob-ov{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:998;opacity:0;pointer-events:none;transition:var(--t)}
 .mob-ov.on{opacity:1;pointer-events:auto}
 .mob-m{position:fixed;top:0;right:-100%;width:82%;max-width:360px;bottom:0;background:var(--bg);z-index:999;padding:72px 20px 20px;transition:.4s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;overflow-y:auto;border-left:1px solid var(--border)}
@@ -56,36 +49,28 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .mob-m a{color:var(--text2);font-size:.95rem;font-weight:700;padding:14px 0;border-bottom:1px solid var(--border);transition:var(--t);display:block}
 .mob-m a:hover{color:var(--text);padding-left:6px}
 .mob-info{margin-top:auto;padding-top:20px;border-top:1px solid var(--border)}
-.mob-info p{font-size:.75rem;color:var(--text3);margin-bottom:4px;line-height:1.5}
+.mob-info p{font-size:.75rem;color:var(--text3);margin-bottom:4px}
 .mob-dev{margin-top:14px;font-size:.68rem;color:var(--text3)}
 .mob-dev a{font-size:.68rem;color:var(--gold);font-weight:800;display:inline;border:none;padding:0}
-
-/* HERO */
 .hero{position:relative;height:100vh;height:100dvh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding-top:56px;text-align:center}
 .hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 50%,rgba(0,0,0,.65) 100%)}
 .hero-c{position:relative;z-index:2;padding:0 20px 90px}
 .hero h1{font-family:var(--fh);font-size:clamp(2rem,7vw,4.5rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1px;text-transform:uppercase}
-.hero h1 span{display:block;font-family:var(--fh);font-weight:500;font-size:clamp(1.1rem,3.2vw,1.8rem);letter-spacing:3px;color:#ffffff;text-transform:uppercase;margin-top:10px}
+.hero h1 span{display:block;font-family:var(--fh);font-weight:500;font-size:clamp(1.1rem,3.2vw,1.8rem);letter-spacing:3px;color:#fff;text-transform:uppercase;margin-top:10px}
 .hero-sc{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.35);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;animation:fl 2s ease-in-out infinite}
 .hero-sc i{width:1px;height:28px;background:rgba(255,255,255,.25);display:block}
 @keyframes fl{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
-
-/* SECTIONS */
 .sec{padding:50px 0}@media(min-width:768px){.sec{padding:72px 0}}
 .sl{font-size:.62rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .st{font-family:var(--fh);font-weight:900;font-size:clamp(1.4rem,4vw,2.3rem);color:var(--text);line-height:1.15;text-transform:uppercase;letter-spacing:-.5px}
 .ss{color:var(--text3);margin-top:6px;font-size:.82rem;max-width:480px}
-
-/* FILTERS */
 .flt{display:flex;flex-wrap:wrap;gap:6px;margin:20px 0 14px}
 .fb{padding:7px 16px;border-radius:100px;background:var(--bg3);border:1px solid var(--border);font-size:.7rem;font-weight:700;color:var(--text2);transition:var(--t);letter-spacing:.3px}
 .fb:hover,.fb.on{background:var(--text);color:var(--bg);border-color:var(--text)}
 .catbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .ccnt{font-size:.75rem;color:var(--text3)}
 .ssel{padding:5px 10px;border-radius:6px;border:1px solid var(--border);font-family:inherit;font-size:.72rem;color:var(--text2);background:var(--bg3);cursor:pointer}
-
-/* CAR GRID */
 .cg{display:grid;grid-template-columns:1fr;gap:14px}
 @media(min-width:420px){.cg{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:768px){.cg{grid-template-columns:repeat(3,1fr);gap:16px}}
@@ -108,9 +93,15 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 [data-theme="light"] .bv{background:#f5f0e0;color:#7a6020;border-color:#c8a24e}
 .ccb{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:6px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--t);z-index:2}
 .ccb:hover,.ccb.on{background:var(--gold);color:#000}
-.cdt{position:absolute;bottom:6px;left:50%;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
-.cd{width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.3);transition:var(--t);border:none;padding:0}
-.cd.on{background:#fff;width:14px;border-radius:3px}
+
+/* COLOR DOTS */
+.clrRow{display:flex;gap:5px;padding:8px 12px;align-items:center}
+.clrLabel{font-size:.58rem;color:var(--text3);margin-right:4px}
+.clrDot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:var(--t);position:relative}
+.clrDot:hover{transform:scale(1.15)}
+.clrDot.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.clrDot::after{content:'';position:absolute;inset:2px;border-radius:50%;border:1px solid rgba(255,255,255,.15)}
+
 .cby{padding:12px}
 .cn{font-family:var(--fh);font-size:.82rem;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:.3px}
 .cy{font-size:.68rem;color:var(--text3);margin-top:1px}
@@ -121,8 +112,6 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .cp small{font-family:var(--fh);font-size:.55rem;color:var(--text3);font-weight:400;margin-left:2px}
 .bd{padding:7px 14px;border-radius:6px;background:var(--text);color:var(--bg);font-size:.68rem;font-weight:800;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}
 .bd:hover{background:var(--gold);color:#000}
-
-/* ADV + COND */
 .ag{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:24px}
 @media(min-width:768px){.ag{grid-template-columns:repeat(4,1fr);gap:14px}}
 .ac{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:16px 14px;transition:var(--t)}
@@ -134,108 +123,76 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 @media(min-width:768px){.cog{grid-template-columns:repeat(3,1fr);gap:14px}}
 .co{padding:16px 14px;border:1px solid var(--border);border-radius:var(--r);transition:var(--t);background:var(--card)}
 .co:hover{border-color:var(--gold)}
-.conum{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--bg3);color:var(--gold);font-family:var(--fn);font-size:.95rem;border-radius:5px;margin-bottom:6px;letter-spacing:1px}
+.conum{display:inline-flex;width:26px;height:26px;align-items:center;justify-content:center;background:var(--bg3);color:var(--gold);font-family:var(--fn);font-size:.95rem;border-radius:5px;margin-bottom:6px}
 .co h3{font-size:.78rem;font-weight:800;margin-bottom:3px;text-transform:uppercase;letter-spacing:.3px}
 .co p{font-size:.7rem;color:var(--text3);line-height:1.4}
-
-/* CTA */
 .cta{padding:50px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
 .ctab{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:20px}
-.bwa{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:#25D366;color:#fff;font-weight:700;font-size:.8rem;transition:var(--t)}
-.bwa:hover{opacity:.9;transform:translateY(-2px)}
-.btg{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:#229ED9;color:#fff;font-weight:700;font-size:.8rem;transition:var(--t)}
-.btg:hover{opacity:.9;transform:translateY(-2px)}
-.bcl{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);border:1px solid var(--border);color:var(--text);font-weight:600;font-size:.8rem;transition:var(--t)}
-.bcl:hover{border-color:var(--gold);color:var(--gold)}
-.bbk{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:var(--text);color:var(--bg);font-weight:800;font-size:.8rem;transition:var(--t)}
-.bbk:hover{background:var(--gold);color:#000}
-
-/* FOOTER */
+.bwa{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:#25D366;color:#fff;font-weight:700;font-size:.8rem;transition:var(--t)}.bwa:hover{opacity:.9;transform:translateY(-2px)}
+.btg{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:#229ED9;color:#fff;font-weight:700;font-size:.8rem;transition:var(--t)}.btg:hover{opacity:.9;transform:translateY(-2px)}
+.bcl{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);border:1px solid var(--border);color:var(--text);font-weight:600;font-size:.8rem;transition:var(--t)}.bcl:hover{border-color:var(--gold);color:var(--gold)}
+.bbk{display:inline-flex;align-items:center;gap:6px;padding:12px 24px;border-radius:var(--r);background:var(--text);color:var(--bg);font-weight:800;font-size:.8rem;transition:var(--t)}.bbk:hover{background:var(--gold);color:#000}
 .ft{padding:36px 0 18px;background:var(--bg);border-top:1px solid var(--border)}
-.ftg{display:grid;grid-template-columns:1fr;gap:24px}
-@media(min-width:768px){.ftg{grid-template-columns:1fr 1fr 1fr}}
+.ftg{display:grid;grid-template-columns:1fr;gap:24px}@media(min-width:768px){.ftg{grid-template-columns:1fr 1fr 1fr}}
 .ft h4{font-size:.65rem;font-weight:800;margin-bottom:10px;letter-spacing:2px;text-transform:uppercase;color:var(--text2)}
-.ftl a{display:block;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}
-.ftl a:hover{color:var(--gold)}
-.ftc a{display:flex;align-items:center;gap:5px;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}
-.ftc a:hover{color:var(--gold)}
+.ftl a{display:block;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}.ftl a:hover{color:var(--gold)}
+.ftc a{display:flex;align-items:center;gap:5px;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}.ftc a:hover{color:var(--gold)}
 .ftb{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:4px}
 .ftcp{font-size:.68rem;color:var(--text3)}.ftdv{font-size:.66rem;color:var(--text3)}.ftdv a{color:var(--gold);font-weight:800}
-
-/* BOT BAR */
 .botb{position:fixed;bottom:0;left:0;right:0;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:800;display:flex;padding:5px 0 calc(5px + env(safe-area-inset-bottom,0px))}
 @media(min-width:1024px){.botb{display:none}}
 .bbb{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0;color:var(--text3);font-size:.55rem;font-weight:700;transition:var(--t);position:relative;text-transform:uppercase;letter-spacing:.3px}
 .bbb:hover,.bbb.on{color:var(--text)}.bbb svg{width:18px;height:18px}
-.bbdg{position:absolute;top:0;right:calc(50% - 15px);width:14px;height:14px;border-radius:50%;background:var(--gold);color:#000;font-size:.5rem;font-weight:800;display:none;align-items:center;justify-content:center}
-.bbdg.sh{display:flex}
+.bbdg{position:absolute;top:0;right:calc(50% - 15px);width:14px;height:14px;border-radius:50%;background:var(--gold);color:#000;font-size:.5rem;font-weight:800;display:none;align-items:center;justify-content:center}.bbdg.sh{display:flex}
 body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
-
-/* SCROLL UP */
 .su{position:fixed;bottom:70px;right:14px;width:40px;height:40px;border-radius:50%;background:var(--text);color:var(--bg);display:flex;align-items:center;justify-content:center;z-index:850;opacity:0;pointer-events:none;transition:var(--t);box-shadow:0 2px 10px rgba(0,0,0,.3)}
 @media(min-width:1024px){.su{bottom:20px;right:20px}}
-.su.sh{opacity:1;pointer-events:auto}
-.su:hover{background:var(--gold);color:#000;transform:scale(1.1)}
-.su svg{width:18px;height:18px}
-
-/* CMP BAR */
+.su.sh{opacity:1;pointer-events:auto}.su:hover{background:var(--gold);color:#000;transform:scale(1.1)}.su svg{width:18px;height:18px}
 .cbar{position:fixed;bottom:-100px;left:50%;transform:translateX(-50%);z-index:900;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:8px 16px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);transition:.4s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(14px);max-width:90vw}
 .cbar.on{bottom:70px}@media(min-width:1024px){.cbar.on{bottom:16px}}
 .cbi{display:flex;gap:4px}
-.cbth{width:40px;height:30px;border-radius:5px;overflow:hidden;border:1px solid var(--border);position:relative}
-.cbth img{width:100%;height:100%;object-fit:cover}
+.cbth{width:40px;height:30px;border-radius:5px;overflow:hidden;border:1px solid var(--border);position:relative}.cbth img{width:100%;height:100%;object-fit:cover}
 .cbrm{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:#e53935;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center;border:none;line-height:1}
 .cblb{color:var(--text3);font-size:.68rem;white-space:nowrap}
-.bcg{padding:7px 14px;border-radius:6px;background:var(--text);color:var(--bg);font-weight:800;font-size:.68rem;white-space:nowrap;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}
-.bcg:hover{background:var(--gold);color:#000}
-
-/* ALL MODALS */
-.mov{position:fixed;inset:0;background:var(--overlay);backdrop-filter:blur(4px);z-index:2000;opacity:0;pointer-events:none;transition:var(--t)}
-.mov.on{opacity:1;pointer-events:auto}
-.mbx{position:fixed;z-index:2001;background:var(--bg);overflow-y:auto;inset:0;transform:translateY(100%);opacity:0;pointer-events:none;transition:.4s cubic-bezier(.4,0,.2,1)}
-.mbx.on{transform:translateY(0);opacity:1;pointer-events:auto}
+.bcg{padding:7px 14px;border-radius:6px;background:var(--text);color:var(--bg);font-weight:800;font-size:.68rem;white-space:nowrap;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}.bcg:hover{background:var(--gold);color:#000}
+.mov{position:fixed;inset:0;background:var(--overlay);backdrop-filter:blur(4px);z-index:2000;opacity:0;pointer-events:none;transition:var(--t)}.mov.on{opacity:1;pointer-events:auto}
+.mbx{position:fixed;z-index:2001;background:var(--bg);overflow-y:auto;inset:0;transform:translateY(100%);opacity:0;pointer-events:none;transition:.4s cubic-bezier(.4,0,.2,1)}.mbx.on{transform:translateY(0);opacity:1;pointer-events:auto}
 @media(min-width:768px){.mbx{inset:auto;top:50%;left:50%;transform:translate(-50%,-50%) scale(.95);width:90vw;max-height:90vh;border-radius:14px;border:1px solid var(--border)}.mbx.on{transform:translate(-50%,-50%) scale(1)}}
 .mbx.dm{z-index:2001}@media(min-width:768px){.mbx.dm{max-width:860px}}
 .mbx.cm{z-index:3001}@media(min-width:768px){.mbx.cm{max-width:1080px;width:95vw}}
 .mbx.bm{z-index:4001}@media(min-width:768px){.mbx.bm{max-width:460px}}
 .mov.co2{z-index:3000}.mov.bo2{z-index:4000}
-.mcl{position:absolute;top:10px;right:10px;z-index:10;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--t)}
-.mcl:hover{background:#e53935}
-
-/* DETAIL */
+.mcl{position:absolute;top:10px;right:10px;z-index:10;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.5);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;transition:var(--t)}.mcl:hover{background:#e53935}
 .mg{position:relative;aspect-ratio:16/10;background:var(--bg3);overflow:hidden}
-.mg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:.35s ease}
-.mg img.on{opacity:1}
-.mgn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);color:#000;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:var(--t);border:none}
-.mgn:hover{background:var(--gold)}.mgn.pv{left:8px}.mgn.nx{right:8px}
+.mg img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0;transition:.35s ease}.mg img.on{opacity:1}
+.mgn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);color:#000;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:var(--t);border:none}.mgn:hover{background:var(--gold)}.mgn.pv{left:8px}.mgn.nx{right:8px}
 .mth{display:flex;gap:5px;padding:8px 14px;overflow-x:auto}
-.mt{width:56px;height:40px;border-radius:5px;overflow:hidden;flex-shrink:0;border:2px solid transparent;cursor:pointer;transition:var(--t);background:none;padding:0}
-.mt.on{border-color:var(--gold)}.mt img{width:100%;height:100%;object-fit:cover}
+.mt{width:56px;height:40px;border-radius:5px;overflow:hidden;flex-shrink:0;border:2px solid transparent;cursor:pointer;transition:var(--t);background:none;padding:0}.mt.on{border-color:var(--gold)}.mt img{width:100%;height:100%;object-fit:cover}
+/* Detail color selector */
+.mClrs{display:flex;gap:6px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--border)}
+.mClrLabel{font-size:.6rem;color:var(--text3);margin-right:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.mClrDot{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:var(--t)}.mClrDot:hover{transform:scale(1.15)}.mClrDot.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
+.mClrName{font-size:.6rem;color:var(--text2);margin-left:4px;font-weight:600}
 .mbd{padding:18px 14px 24px}@media(min-width:768px){.mbd{padding:22px 24px 28px}}
 .mcs{display:inline-block;padding:3px 8px;border-radius:5px;font-size:.58rem;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
 .mcn{font-family:var(--fh);font-size:1.2rem;font-weight:900;color:var(--text);margin-top:5px;text-transform:uppercase;letter-spacing:.5px}
 @media(min-width:768px){.mcn{font-size:1.5rem}}
 .mpb{display:flex;align-items:baseline;gap:6px;margin-top:8px;padding:10px 14px;background:var(--bg3);border-radius:var(--r);border-left:3px solid var(--gold)}
-.mpr{font-family:var(--fn);font-size:1.7rem;color:var(--text);letter-spacing:1px}
-.mpu{font-size:.75rem;color:var(--text3)}
+.mpr{font-family:var(--fn);font-size:1.7rem;color:var(--text);letter-spacing:1px}.mpu{font-size:.75rem;color:var(--text3)}
 .msp{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:14px}
 @media(min-width:480px){.msp{grid-template-columns:repeat(3,1fr)}}
 .ms{display:flex;align-items:center;gap:7px;padding:8px;background:var(--bg2);border-radius:6px;border:1px solid var(--border)}
 .msi{color:var(--gold);flex-shrink:0}.msl{font-size:.58rem;color:var(--text3);text-transform:uppercase;letter-spacing:.4px}.msv{font-size:.76rem;font-weight:700;color:var(--text)}
 .mds{margin-top:14px;padding:12px 14px;background:var(--bg2);border-radius:6px;font-size:.78rem;color:var(--text2);line-height:1.55;border:1px solid var(--border)}
-.mac{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:14px}
-@media(min-width:480px){.mac{grid-template-columns:repeat(4,1fr)}}
+.mac{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:14px}@media(min-width:480px){.mac{grid-template-columns:repeat(4,1fr)}}
 .ma{padding:10px 12px;border-radius:6px;font-weight:800;font-size:.7rem;text-align:center;transition:var(--t);display:flex;align-items:center;justify-content:center;gap:4px;text-transform:uppercase;letter-spacing:.3px}
 .ma1{background:var(--text);color:var(--bg)}.ma1:hover{background:var(--gold);color:#000}
 .ma2{background:var(--bg3);color:var(--text);border:1px solid var(--border)}
 .ma3{background:#25D366;color:#fff}
 .ma4{background:var(--bg3);color:var(--text2);border:1px solid var(--border)}.ma4:hover{border-color:var(--gold);color:var(--gold)}
-
-/* CMP MODAL */
 .cmh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--bg);z-index:2}
 .cmh h2{font-family:var(--fh);font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
-.cmcl{width:30px;height:30px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text2);transition:var(--t)}
-.cmcl:hover{background:#e53935;color:#fff}
+.cmcl{width:30px;height:30px;border-radius:50%;background:var(--bg3);display:flex;align-items:center;justify-content:center;color:var(--text2);transition:var(--t)}.cmcl:hover{background:#e53935;color:#fff}
 .ctw{overflow-x:auto;padding:0 0 18px;-webkit-overflow-scrolling:touch}
 .ctb{width:100%;border-collapse:collapse;min-width:460px}
 .ctb th,.ctb td{padding:8px 12px;text-align:center;border-bottom:1px solid var(--border);font-size:.74rem}
@@ -246,34 +203,23 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 .cctt{font-size:.7rem;font-weight:800;text-transform:uppercase}
 .ccrm{width:18px;height:18px;border-radius:50%;background:var(--bg3);color:var(--text3);font-size:9px;display:flex;align-items:center;justify-content:center;transition:var(--t);border:none}.ccrm:hover{background:#e53935;color:#fff}
 .chl{background:rgba(200,162,78,.08);font-weight:700;color:var(--text)}
-.cbk{margin-top:4px;padding:5px 12px;border-radius:5px;background:var(--text);color:var(--bg);font-weight:800;font-size:.65rem;transition:var(--t);text-transform:uppercase;letter-spacing:.3px}
-.cbk:hover{background:var(--gold);color:#000}
-
-/* BOOKING */
+.cbk{margin-top:4px;padding:5px 12px;border-radius:5px;background:var(--text);color:var(--bg);font-weight:800;font-size:.65rem;transition:var(--t);text-transform:uppercase;letter-spacing:.3px}.cbk:hover{background:var(--gold);color:#000}
 .bkh{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--border)}
 .bkh h2{font-family:var(--fh);font-size:.9rem;font-weight:900;text-transform:uppercase;letter-spacing:.5px}
 .bkf{padding:18px;display:flex;flex-direction:column;gap:12px}
 .fg{display:flex;flex-direction:column;gap:3px}
 .fg label{font-size:.68rem;font-weight:700;color:var(--text2);text-transform:uppercase;letter-spacing:.5px}
-.fg input,.fg textarea,.fg select{padding:9px 10px;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:.82rem;background:var(--bg2);color:var(--text);transition:var(--t);outline:none}
+.fg input,.fg textarea{padding:9px 10px;border:1px solid var(--border);border-radius:6px;font-family:inherit;font-size:.82rem;background:var(--bg2);color:var(--text);transition:var(--t);outline:none}
 .fg input:focus,.fg textarea:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(200,162,78,.12)}
 .fg textarea{resize:vertical;min-height:60px}
-.bsb{padding:11px;border-radius:6px;background:var(--text);color:var(--bg);font-weight:800;font-size:.82rem;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}
-.bsb:hover{background:var(--gold);color:#000}
-
-/* FS GALLERY */
-.fs{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:var(--t)}
-.fs.on{opacity:1;pointer-events:auto}
-.fsc{position:absolute;top:12px;right:12px;z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--t);border:none}
-.fsc:hover{background:rgba(255,255,255,.15)}
+.bsb{padding:11px;border-radius:6px;background:var(--text);color:var(--bg);font-weight:800;font-size:.82rem;transition:var(--t);text-transform:uppercase;letter-spacing:.5px}.bsb:hover{background:var(--gold);color:#000}
+.fs{position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:var(--t)}.fs.on{opacity:1;pointer-events:auto}
+.fsc{position:absolute;top:12px;right:12px;z-index:10;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.1rem;transition:var(--t);border:none}.fsc:hover{background:rgba(255,255,255,.15)}
 .fsi{max-width:92vw;max-height:76vh;object-fit:contain;border-radius:6px;transition:.3s ease}
-.fsn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;border:none;transition:var(--t)}
-.fsn:hover{background:rgba(255,255,255,.15)}
+.fsn{position:absolute;top:50%;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.08);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;border:none;transition:var(--t)}.fsn:hover{background:rgba(255,255,255,.15)}
 .fsn.pv{left:10px}.fsn.nx{right:10px}
 .fsd{display:flex;gap:5px;margin-top:14px}
-.fdt{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);border:none;padding:0;transition:var(--t)}
-.fdt.on{background:var(--gold);width:18px;border-radius:3px}
-
+.fdt{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);border:none;padding:0;transition:var(--t)}.fdt.on{background:var(--gold);width:18px;border-radius:3px}
 .reveal{opacity:0;transform:translateY(18px);transition:.5s cubic-bezier(.25,.1,.25,1)}.reveal.vis{opacity:1;transform:translateY(0)}
 </style>
 </head>
@@ -281,182 +227,220 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 
 <header class="hdr"><div class="con hdr-in">
   <a href="#" class="logo"><img src="images/logo-white.png" alt="QAZ AUTO RENT" class="logo-dark"><img src="images/logo-dark.png" alt="QAZ AUTO RENT" class="logo-light"></a>
-  <nav class="nav-d"><a href="#catalog" data-t="nav-catalog">Каталог</a><a href="#advantages" data-t="nav-adv">Преимущества</a><a href="#conditions" data-t="nav-cond">Условия</a><a href="#contacts" data-t="nav-contacts">Контакты</a></nav>
+  <nav class="nav-d"><a href="#catalog">Каталог</a><a href="#advantages">Преимущества</a><a href="#conditions">Условия</a><a href="#contacts">Контакты</a></nav>
   <div class="hdr-r">
     <div class="lang-t"><button class="lang-b on" onclick="setLang('ru')">RU</button><button class="lang-b" onclick="setLang('kz')">ҚЗ</button></div>
-    <button class="thm-t" onclick="togTheme()" aria-label="Тема"><svg id="tI" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
-    <button class="btn-hb" onclick="openBk()" data-t="nav-book">Забронировать</button>
-    <button class="ham" onclick="togMob()" aria-label="Меню"><span></span><span></span><span></span></button>
+    <button class="thm-t" onclick="togTheme()"><svg id="tI" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+    <button class="btn-hb" onclick="openBk()">Забронировать</button>
+    <button class="ham" onclick="togMob()"><span></span><span></span><span></span></button>
   </div>
 </div></header>
-
 <div class="mob-ov" onclick="togMob()"></div>
 <nav class="mob-m">
-  <a href="#catalog" onclick="togMob()" data-t="nav-catalog">Каталог</a>
-  <a href="#advantages" onclick="togMob()" data-t="nav-adv">Преимущества</a>
-  <a href="#conditions" onclick="togMob()" data-t="nav-cond">Условия аренды</a>
-  <a href="#contacts" onclick="togMob()" data-t="nav-contacts">Контакты</a>
-  <a href="javascript:void(0)" onclick="togMob();openBk()" data-t="nav-book">Забронировать</a>
-  <a href="tel:+77070070107">+7 707 007 01 07</a>
-  <a href="https://wa.me/77070070107" target="_blank">WhatsApp</a>
-  <a href="https://t.me/+77070070107" target="_blank">Telegram</a>
-  <div class="mob-info"><p data-t="mob-info">Аренда авто в Алматы. Ежедневно, без выходных.</p><p data-t="mob-addr">г. Алматы, Казахстан</p></div>
+  <a href="#catalog" onclick="togMob()">Каталог</a><a href="#advantages" onclick="togMob()">Преимущества</a><a href="#conditions" onclick="togMob()">Условия</a><a href="#contacts" onclick="togMob()">Контакты</a>
+  <a href="javascript:void(0)" onclick="togMob();openBk()">Забронировать</a>
+  <a href="tel:+77070070107">+7 707 007 01 07</a><a href="https://wa.me/77070070107" target="_blank">WhatsApp</a><a href="https://t.me/+77070070107" target="_blank">Telegram</a>
+  <div class="mob-info"><p>Аренда авто в Алматы. Ежедневно.</p><p>г. Алматы, Казахстан</p></div>
   <div class="mob-dev">Разработчик сайта — <a href="https://wa.me/77074534518" target="_blank">Anuken</a></div>
 </nav>
 
 <section class="hero" id="hero">
-  <video class="hero-vid" autoplay muted loop playsinline poster=""><source src="hero-bg.mp4" type="video/mp4"></video>
+  <video class="hero-vid" autoplay muted loop playsinline><source src="hero-bg.mp4" type="video/mp4"></video>
   <div class="hero-ov"></div>
-  <div class="hero-c"><h1>QAZ AUTO RENT<span data-t="hero-sub">Аренда автомобилей в Алматы</span></h1></div>
-  <div class="hero-sc"><span data-t="hero-scroll">Листайте</span><i></i></div>
+  <div class="hero-c"><h1>QAZ AUTO RENT<span>Аренда автомобилей в Алматы</span></h1></div>
+  <div class="hero-sc"><span>Листайте</span><i></i></div>
 </section>
 
 <section class="sec" id="catalog"><div class="con">
-  <div class="sl" data-t="cat-label">Автопарк</div>
-  <h2 class="st reveal" data-t="cat-title">Выберите автомобиль</h2>
-  <p class="ss reveal" data-t="cat-sub">17 автомобилей от эконом до VIP. Цены за сутки.</p>
-  <div class="flt reveal" id="flt"><button class="fb on" data-filter="all" data-t="f-all">Все</button><button class="fb" data-filter="Эконом" data-t="f-eco">Эконом</button><button class="fb" data-filter="Комфорт" data-t="f-com">Комфорт</button><button class="fb" data-filter="Бизнес" data-t="f-biz">Бизнес</button><button class="fb" data-filter="Премиум" data-t="f-pre">Премиум</button><button class="fb" data-filter="VIP">VIP</button></div>
+  <div class="sl">Автопарк</div>
+  <h2 class="st reveal">Выберите автомобиль</h2>
+  <p class="ss reveal">17 автомобилей от эконом до VIP. Цены за сутки.</p>
+  <div class="flt reveal" id="flt"><button class="fb on" data-filter="all">Все</button><button class="fb" data-filter="Эконом">Эконом</button><button class="fb" data-filter="Комфорт">Комфорт</button><button class="fb" data-filter="Бизнес">Бизнес</button><button class="fb" data-filter="Премиум">Премиум</button><button class="fb" data-filter="VIP">VIP</button></div>
   <div class="catbar reveal"><div class="ccnt" id="ccnt"></div><select class="ssel" id="ssel"><option value="pa">По цене ↑</option><option value="pd">По цене ↓</option><option value="n">По названию</option></select></div>
   <div class="cg" id="cg"></div>
 </div></section>
 
 <section class="sec" id="advantages"><div class="con">
-  <div class="sl" data-t="adv-label">Почему мы</div>
-  <h2 class="st reveal" data-t="adv-title">Преимущества сервиса</h2>
+  <div class="sl">Почему мы</div><h2 class="st reveal">Преимущества сервиса</h2>
   <div class="ag">
-    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3 data-t="a1t">Быстро</h3><p data-t="a1d">Оформление за 5 минут. Минимум документов.</p></div>
-    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3 data-t="a2t">Страхование</h3><p data-t="a2d">КАСКО включено. Полная защита.</p></div>
-    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3 data-t="a3t">24/7</h3><p data-t="a3d">Круглосуточная поддержка.</p></div>
-    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3 data-t="a4t">Чистота</h3><p data-t="a4d">Мойка перед каждой выдачей.</p></div>
+    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><h3>Быстро</h3><p>Оформление за 5 минут.</p></div>
+    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Страхование</h3><p>КАСКО включено.</p></div>
+    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><h3>24/7</h3><p>Круглосуточная поддержка.</p></div>
+    <div class="ac reveal"><div class="ai"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><h3>Чистота</h3><p>Мойка перед каждой выдачей.</p></div>
   </div>
 </div></section>
 
 <section class="sec" id="conditions"><div class="con">
-  <div class="sl" data-t="co-label">Информация</div>
-  <h2 class="st reveal" data-t="co-title">Условия аренды</h2>
+  <div class="sl">Информация</div><h2 class="st reveal">Условия аренды</h2>
   <div class="cog">
-    <div class="co reveal"><div class="conum">1</div><h3 data-t="c1t">Возраст</h3><p data-t="c1d">Минимум 23 года. Стаж — от 2 лет.</p></div>
-    <div class="co reveal"><div class="conum">2</div><h3 data-t="c2t">Документы</h3><p data-t="c2d">Удостоверение личности и вод. права.</p></div>
-    <div class="co reveal"><div class="conum">3</div><h3 data-t="c3t">Залог</h3><p data-t="c3d">50 000 – 300 000 ₸. Возврат при сдаче.</p></div>
-    <div class="co reveal"><div class="conum">4</div><h3 data-t="c4t">Оплата</h3><p data-t="c4d">Наличные, перевод, Kaspi.</p></div>
-    <div class="co reveal"><div class="conum">5</div><h3 data-t="c5t">Доставка</h3><p data-t="c5d">Бесплатно по Алматы.</p></div>
-    <div class="co reveal"><div class="conum">6</div><h3 data-t="c6t">Правила</h3><p data-t="c6d">Выезд за область — по согласованию.</p></div>
+    <div class="co reveal"><div class="conum">1</div><h3>Возраст</h3><p>Минимум 20 лет. Стаж — от 2 лет.</p></div>
+    <div class="co reveal"><div class="conum">2</div><h3>Документы</h3><p>Удостоверение и вод. права.</p></div>
+    <div class="co reveal"><div class="conum">3</div><h3>Залог</h3><p>20 000 – 60 000 ₸.</p></div>
+    <div class="co reveal"><div class="conum">4</div><h3>Оплата</h3><p>Наличные, перевод, Kaspi.</p></div>
+    <div class="co reveal"><div class="conum">5</div><h3>Доставка</h3><p>5 000 ₸ по Алматы.</p></div>
+    <div class="co reveal"><div class="conum">6</div><h3>Правила</h3><p>Выезд за область — по согласованию.</p></div>
   </div>
 </div></section>
 
 <section class="cta" id="contacts"><div class="con">
-  <div class="sl" data-t="cta-label">Связаться</div>
-  <h2 class="st reveal" data-t="cta-title">Забронируйте сейчас</h2>
-  <p class="ss reveal" style="margin:6px auto 0" data-t="cta-sub">Ответим за 5 минут</p>
+  <div class="sl">Связаться</div><h2 class="st reveal">Забронируйте сейчас</h2><p class="ss reveal" style="margin:6px auto 0">Ответим за 5 минут</p>
   <div class="ctab reveal">
-    <a href="https://wa.me/77070070107" target="_blank" class="bwa"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>WhatsApp</a>
-    <a href="https://t.me/+77070070107" target="_blank" class="btg"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>Telegram</a>
-    <a href="tel:+77070070107" class="bcl"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+7 707 007 01 07</a>
-    <button class="bbk" onclick="openBk()" data-t="cta-book">Забронировать</button>
+    <a href="https://wa.me/77070070107" target="_blank" class="bwa">WhatsApp</a>
+    <a href="https://t.me/+77070070107" target="_blank" class="btg">Telegram</a>
+    <a href="tel:+77070070107" class="bcl">+7 707 007 01 07</a>
+    <button class="bbk" onclick="openBk()">Забронировать</button>
   </div>
 </div></section>
 
 <footer class="ft"><div class="con">
   <div class="ftg">
-    <div><img src="images/logo-white.png" alt="QAZ AUTO RENT" class="logo-dark" style="height:32px;width:auto;margin-bottom:10px"><img src="images/logo-dark.png" alt="QAZ AUTO RENT" class="logo-light" style="height:32px;width:auto;margin-bottom:10px"><p style="font-size:.75rem;color:var(--text3)" data-t="f-desc">Аренда авто в Алматы. Премиум сервис.</p></div>
-    <div class="ftl"><h4 data-t="f-nav">Навигация</h4><a href="#catalog" data-t="nav-catalog">Каталог</a><a href="#conditions" data-t="nav-cond">Условия</a><a href="#contacts" data-t="nav-contacts">Контакты</a></div>
-    <div class="ftc"><h4 data-t="f-cont">Контакты</h4><a href="tel:+77070070107"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>+7 707 007 01 07</a><a href="https://wa.me/77070070107" target="_blank">WhatsApp</a><a href="https://t.me/+77070070107" target="_blank">Telegram</a></div>
+    <div><img src="images/logo-white.png" alt="" class="logo-dark" style="height:32px;margin-bottom:10px"><img src="images/logo-dark.png" alt="" class="logo-light" style="height:32px;margin-bottom:10px"><p style="font-size:.75rem;color:var(--text3)">Аренда авто в Алматы.</p></div>
+    <div class="ftl"><h4>Навигация</h4><a href="#catalog">Каталог</a><a href="#conditions">Условия</a><a href="#contacts">Контакты</a></div>
+    <div class="ftc"><h4>Контакты</h4><a href="tel:+77070070107">+7 707 007 01 07</a><a href="https://wa.me/77070070107" target="_blank">WhatsApp</a><a href="https://t.me/+77070070107" target="_blank">Telegram</a></div>
   </div>
   <div class="ftb"><div class="ftcp">© 2026 QAZ AUTO RENT</div><div class="ftdv">Разработчик — <a href="https://wa.me/77074534518" target="_blank">Anuken</a></div></div>
 </div></footer>
 
 <div class="botb">
-  <a href="#catalog" class="bbb on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span data-t="bb-cat">Каталог</span></a>
-  <button class="bbb" onclick="openCmp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg><span class="bbdg" id="cbdg">0</span><span data-t="bb-cmp">Сравнить</span></button>
-  <a href="tel:+77070070107" class="bbb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg><span data-t="bb-call">Звонок</span></a>
+  <a href="#catalog" class="bbb on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Каталог</span></a>
+  <button class="bbb" onclick="openCmp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg><span class="bbdg" id="cbdg">0</span><span>Сравнить</span></button>
+  <a href="tel:+77070070107" class="bbb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.876.37 1.79.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.02.33 1.93.57 2.81.7A2 2 0 0122 16.92z"/></svg><span>Звонок</span></a>
   <a href="https://wa.me/77070070107" target="_blank" class="bbb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>WhatsApp</a>
 </div>
-
 <button class="su" id="su" onclick="smartUp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
 <div class="cbar" id="cbar"><div class="cbi" id="cbi"></div><div class="cblb"><span id="cbc">0</span> авто</div><button class="bcg" onclick="openCmp()">Сравнить</button></div>
-
 <div class="mov" id="dov" onclick="clDet()"></div>
-<div class="mbx dm" id="dm"><button class="mcl" onclick="clDet()">✕</button><div class="mg" id="dg"></div><div class="mth" id="dth"></div><div class="mbd" id="dbd"></div></div>
-
+<div class="mbx dm" id="dm"><button class="mcl" onclick="clDet()">✕</button><div class="mg" id="dg"></div><div class="mClrs" id="mClrs"></div><div class="mth" id="dth"></div><div class="mbd" id="dbd"></div></div>
 <div class="mov co2" id="cov" onclick="clCmp()"></div>
-<div class="mbx cm" id="cmm"><div class="cmh"><h2 data-t="cmp-title">Сравнение</h2><button class="cmcl" onclick="clCmp()">✕</button></div><div class="ctw" id="ctw"></div></div>
-
+<div class="mbx cm" id="cmm"><div class="cmh"><h2>Сравнение</h2><button class="cmcl" onclick="clCmp()">✕</button></div><div class="ctw" id="ctw"></div></div>
 <div class="fs" id="fsg"><button class="fsc" onclick="clFs()">✕</button><button class="fsn pv" onclick="fPv()">‹</button><img class="fsi" id="fsi" src="" alt=""><button class="fsn nx" onclick="fNx()">›</button><div class="fsd" id="fsd"></div></div>
-
 <div class="mov bo2" id="bov" onclick="clBk()"></div>
-<div class="mbx bm" id="bm"><div class="bkh"><h2 data-t="bk-title">Бронирование</h2><button class="cmcl" onclick="clBk()">✕</button></div>
-<div class="bkf"><div class="fg"><label data-t="bk-car">Автомобиль</label><input type="text" id="bkc" readonly></div><div class="fg"><label data-t="bk-name">Ваше имя</label><input type="text" id="bkn"></div><div class="fg"><label data-t="bk-phone">Телефон</label><input type="tel" id="bkp" placeholder="+7"></div><div class="fg"><label data-t="bk-date">Дата начала</label><input type="date" id="bkd"></div><div class="fg"><label data-t="bk-days">Кол-во суток</label><input type="number" id="bky" min="1" value="1"></div><div class="fg"><label data-t="bk-comment">Комментарий</label><textarea id="bkm"></textarea></div><button class="bsb" onclick="subBk()" data-t="bk-submit">Отправить заявку</button></div></div>
+<div class="mbx bm" id="bm"><div class="bkh"><h2>Бронирование</h2><button class="cmcl" onclick="clBk()">✕</button></div>
+<div class="bkf"><div class="fg"><label>Автомобиль</label><input id="bkc" readonly></div><div class="fg"><label>Ваше имя</label><input id="bkn"></div><div class="fg"><label>Телефон</label><input type="tel" id="bkp" placeholder="+7"></div><div class="fg"><label>Дата начала</label><input type="date" id="bkd"></div><div class="fg"><label>Кол-во суток</label><input type="number" id="bky" min="1" value="1"></div><div class="fg"><label>Комментарий</label><textarea id="bkm"></textarea></div><button class="bsb" onclick="subBk()">Отправить заявку</button></div></div>
 
 <script>
+// COLOR MAP: key=slug, hex=display, name=folder name
+const CLR={white:{hex:'#f0f0f0',n:'white',ru:'Белый',kz:'Ақ'},black:{hex:'#222',n:'black',ru:'Чёрный',kz:'Қара'},blue:{hex:'#1565c0',n:'blue',ru:'Синий',kz:'Көк'},green:{hex:'#2e7d32',n:'green',ru:'Зелёный',kz:'Жасыл'}};
+
 const C=[
-{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:15000,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",d:"Надёжный и экономичный седан для города. Низкий расход.",dk:"Қала ішіне ыңғайлы, үнемді седан."},
-{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:20000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",d:"Стильный седан с комфортным салоном и мультимедиа.",dk:"Заманауи мультимедиалық жүйесі бар стильді седан."},
-{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",d:"Легендарная Corolla — надёжность и комфорт.",dk:"Аңызға айналған Corolla — сенімділік пен жайлылық."},
-{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",d:"Кроссовер для загородных поездок и горных дорог.",dk:"Тау жолдарына ыңғайлы кроссовер."},
-{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:25000,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",d:"Новое поколение с футуристичным дизайном и камерами.",dk:"Болашақтық дизайны бар жаңа буын."},
-{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:25000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",d:"Бизнес-классика. Просторный салон, мощный двигатель.",dk:"Бизнес-классика. Кең салон, қуатты қозғалтқыш."},
-{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",d:"Обновлённая Camry с улучшенной шумоизоляцией.",dk:"Жаңартылған Camry, жақсартылған дыбыс оқшаулау."},
-{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",d:"Премиальный дизайн и просторный салон.",dk:"Премиум дизайн, кең салон."},
-{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",d:"Тишина, комфорт, кожаный салон, премиальный звук.",dk:"Тыныштық, жайлылық, былғары салон."},
-{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",d:"Спортивный характер в бизнес-упаковке.",dk:"Бизнес-қаптамадағы спорттық сипат."},
-{id:11,b:"KIA",m:"K5",y:"2020–2023",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",d:"Яркий дизайн, мощный двигатель, технологичный салон.",dk:"Жарқын дизайн, қуатты қозғалтқыш."},
-{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:40000,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",d:"Легенда бездорожья. 7 мест, полный привод, V6.",dk:"7 орын, толық жетек, V6."},
-{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:50000,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",d:"Премиальный кроссовер. Тишина и статус.",dk:"Премиум кроссовер. Тыныштық және мәртебе."},
-{id:14,b:"BMW",m:"530i",y:"2018–2021",p:60000,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",d:"Спортивный премиум-седан. Динамика и технологии.",dk:"Спорттық премиум-седан. Динамика."},
-{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:60000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",d:"Флагман Toyota. Абсолютная проходимость, 7 мест.",dk:"Toyota флагманы. Толық өтімділік, 7 орын."},
-{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",d:"Вершина роскоши. V8, 8 мест, кожа и дерево.",dk:"Сәнділік шыңы. V8, 8 орын, былғары."},
-{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",d:"Легендарный Гелендваген AMG. 507 л.с., статус.",dk:"AMG Гелендваген. 507 ж.к., мәртебе."}
+{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:15000,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",colors:['white','blue'],d:"Надёжный и экономичный седан для города.",dk:"Үнемді қалалық седан."},
+{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:20000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",colors:['white','black'],d:"Стильный седан с комфортным салоном.",dk:"Стильді седан."},
+{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",colors:['white'],d:"Легендарная Corolla — надёжность.",dk:"Аңызға айналған Corolla."},
+{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",colors:['white'],d:"Кроссовер для загородных поездок.",dk:"Тау жолдарына кроссовер."},
+{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:25000,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",colors:['green','black','white'],d:"Новое поколение с камерами.",dk:"Жаңа буын."},
+{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:25000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",colors:['blue','white'],d:"Бизнес-классика.",dk:"Бизнес-классика."},
+{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",colors:['white','black'],d:"Обновлённая Camry.",dk:"Жаңартылған Camry."},
+{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",colors:['white'],d:"Премиальный дизайн.",dk:"Премиум дизайн."},
+{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",colors:['white'],d:"Тишина и комфорт.",dk:"Тыныштық, жайлылық."},
+{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",colors:['white','black','blue'],d:"Спортивный бизнес.",dk:"Спорттық бизнес."},
+{id:11,b:"KIA",m:"K5",y:"2020–2023",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",colors:['white'],d:"Яркий и технологичный.",dk:"Жарқын, технологиялық."},
+{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:40000,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",colors:['black'],d:"Легенда бездорожья. 7 мест.",dk:"7 орын, V6."},
+{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:50000,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",colors:['white'],d:"Тишина и статус.",dk:"Мәртебе."},
+{id:14,b:"BMW",m:"530i",y:"2018–2021",p:60000,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",colors:['white','black'],d:"Динамика и технологии.",dk:"Динамика."},
+{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:60000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",colors:['black'],d:"Флагман Toyota. 7 мест.",dk:"Toyota флагманы."},
+{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",colors:['white'],d:"Вершина роскоши. V8.",dk:"Сәнділік шыңы."},
+{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",colors:['black'],d:"Гелендваген AMG. 507 л.с.",dk:"AMG. 507 ж.к."}
 ];
+
 const V=['1','2','3','4'];
-function cI(c,v){return`images/${c.sl}-${v}.webp`}
+// Photo path: images/slug-color-N.jpg
+function cI(c,clr,v){return'images/'+c.sl+'-'+clr+'-'+v+'.jpg'}
 function bC(c){if(c.includes('VIP'))return'bv';if(c.includes('Прем'))return'bp';if(c.includes('Биз'))return'bb';if(c.includes('Ком'))return'bc';return'be'}
+
+// Track selected color per car
+let selClr={};
+C.forEach(c=>{selClr[c.id]=c.colors[0]});
 
 let cL=[],cF='all',cS='pa',lang='ru',dI=0,dC=null,fI=[],fX=0;
 
-// I18N
-const T={
-ru:{pd:"/ сутки",dt:"Подробнее",bk:"Забронировать",cl:"Позвонить",cm:"Сравнить",rm:"Убрать","nav-catalog":"Каталог","nav-adv":"Преимущества","nav-cond":"Условия","nav-contacts":"Контакты","nav-book":"Забронировать","hero-sub":"Аренда автомобилей в Алматы","hero-scroll":"Листайте","cat-label":"Автопарк","cat-title":"Выберите автомобиль","cat-sub":"17 автомобилей от эконом до VIP. Цены за сутки.","f-all":"Все","f-eco":"Эконом","f-com":"Комфорт","f-biz":"Бизнес","f-pre":"Премиум","adv-label":"Почему мы","adv-title":"Преимущества сервиса","a1t":"Быстро","a1d":"Оформление за 5 минут. Минимум документов.","a2t":"Страхование","a2d":"КАСКО включено. Полная защита.","a3t":"24/7","a3d":"Круглосуточная поддержка.","a4t":"Чистота","a4d":"Мойка перед каждой выдачей.","co-label":"Информация","co-title":"Условия аренды","c1t":"Возраст","c1d":"Минимум 23 года. Стаж — от 2 лет.","c2t":"Документы","c2d":"Удостоверение личности и вод. права.","c3t":"Залог","c3d":"50 000 – 300 000 ₸. Возврат при сдаче.","c4t":"Оплата","c4d":"Наличные, перевод, Kaspi.","c5t":"Доставка","c5d":"Бесплатно по Алматы.","c6t":"Правила","c6d":"Выезд за область — по согласованию.","cta-label":"Связаться","cta-title":"Забронируйте сейчас","cta-sub":"Ответим за 5 минут","cta-book":"Забронировать","f-desc":"Аренда авто в Алматы. Премиум сервис.","f-nav":"Навигация","f-cont":"Контакты","mob-info":"Аренда авто в Алматы. Ежедневно.","mob-addr":"г. Алматы, Казахстан","bb-cat":"Каталог","bb-cmp":"Сравнить","bb-call":"Звонок","cmp-title":"Сравнение","bk-title":"Бронирование","bk-car":"Автомобиль","bk-name":"Ваше имя","bk-phone":"Телефон","bk-date":"Дата начала","bk-days":"Кол-во суток","bk-comment":"Комментарий","bk-submit":"Отправить заявку"},
-kz:{pd:"/ тәулік",dt:"Толығырақ",bk:"Брондау",cl:"Қоңырау",cm:"Салыстыру",rm:"Алып тастау","nav-catalog":"Каталог","nav-adv":"Артықшылықтар","nav-cond":"Шарттар","nav-contacts":"Байланыс","nav-book":"Брондау","hero-sub":"Алматыда авто жалға беру","hero-scroll":"Төмен","cat-label":"Автопарк","cat-title":"Автокөлікті таңдаңыз","cat-sub":"17 автокөлік. Бағасы тәулігіне.","f-all":"Барлық","f-eco":"Эконом","f-com":"Комфорт","f-biz":"Бизнес","f-pre":"Премиум","adv-label":"Неге біз","adv-title":"Артықшылықтар","a1t":"Жылдам","a1d":"5 минутта рәсімдеу.","a2t":"Сақтандыру","a2d":"КАСКО қосылған.","a3t":"24/7","a3d":"Тәулік бойы қолдау.","a4t":"Тазалық","a4d":"Жуу және дезинфекция.","co-label":"Ақпарат","co-title":"Жалға беру шарттары","c1t":"Жас","c1d":"Кем дегенде 23 жас. Тәжірибе 2 жыл.","c2t":"Құжаттар","c2d":"Жеке куәлік және жүргізуші куәлігі.","c3t":"Кепілдік","c3d":"50 000 – 300 000 ₸.","c4t":"Төлем","c4d":"Қолма-қол, аударым, Kaspi.","c5t":"Жеткізу","c5d":"Алматы бойынша тегін.","c6t":"Ережелер","c6d":"Облыстан тыс — келісім бойынша.","cta-label":"Байланыс","cta-title":"Қазір брондаңыз","cta-sub":"5 минутта жауап береміз","cta-book":"Брондау","f-desc":"Алматыда авто жалға беру.","f-nav":"Навигация","f-cont":"Байланыс","mob-info":"Алматыда авто жалға беру.","mob-addr":"Алматы қ., Қазақстан","bb-cat":"Каталог","bb-cmp":"Салыстыру","bb-call":"Қоңырау","cmp-title":"Салыстыру","bk-title":"Брондау","bk-car":"Автокөлік","bk-name":"Атыңыз","bk-phone":"Телефон","bk-date":"Басталу күні","bk-days":"Тәулік саны","bk-comment":"Түсініктеме","bk-submit":"Өтінім жіберу"}
-};
-function t(k){return T[lang]?.[k]||k}
-function setLang(l){lang=l;document.querySelectorAll('.lang-b').forEach(b=>b.classList.toggle('on',b.textContent.trim()===(l==='ru'?'RU':'ҚЗ')));document.querySelectorAll('[data-t]').forEach(el=>{const k=el.getAttribute('data-t');if(T[l]?.[k])el.textContent=T[l][k]});rCat()}
-function togTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('tI').innerHTML=n==='dark'?'<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>':'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'}
+function rCat(){
+  const l=gF();document.getElementById('ccnt').textContent=l.length+' авто';
+  document.getElementById('cg').innerHTML=l.map(c=>{
+    const ic=cL.includes(c.id);
+    const clr=selClr[c.id];
+    return`<div class="cc reveal vis" id="card-${c.id}">
+      <div class="cci" onclick="oDet(${c.id})">
+        <img id="cimg-${c.id}" src="${cI(c,clr,'1')}" alt="${c.b} ${c.m}" loading="lazy">
+        <span class="cbg ${bC(c.c)}">${c.c}</span>
+      </div>
+      <button class="ccb${ic?' on':''}" onclick="event.stopPropagation();tC(${c.id})">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg>
+      </button>
+      ${c.colors.length>1?`<div class="clrRow"><span class="clrLabel">Цвет:</span>${c.colors.map(cl=>`<div class="clrDot${cl===clr?' on':''}" style="background:${CLR[cl].hex}" title="${CLR[cl].ru}" onclick="event.stopPropagation();switchClr(${c.id},'${cl}')"></div>`).join('')}</div>`:''}
+      <div class="cby">
+        <div class="cn">${c.b} ${c.m}</div>
+        <div class="cy">${c.y} · ${c.tp}</div>
+        <div class="csp">
+          <div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></div><div class="csv">${c.en}</div></div>
+          <div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="csv">${c.tr.split('/')[0].trim()}</div></div>
+          <div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="csv">${c.s}</div></div>
+        </div>
+        <div class="cf">
+          <div class="cp">${c.p.toLocaleString('ru')} ₸<small>/ сутки</small></div>
+          <button class="bd" onclick="oDet(${c.id})">Подробнее</button>
+        </div>
+      </div>
+    </div>`}).join('');
+}
+
+function switchClr(id,clr){
+  selClr[id]=clr;
+  const c=C.find(x=>x.id===id);
+  // Update card image
+  const img=document.getElementById('cimg-'+id);
+  if(img)img.src=cI(c,clr,'1');
+  // Update dots
+  const card=document.getElementById('card-'+id);
+  if(card)card.querySelectorAll('.clrDot').forEach(d=>{d.classList.toggle('on',d.title===CLR[clr].ru)});
+}
 
 function gF(){let l=[...C];if(cF!=='all')l=l.filter(c=>c.c.startsWith(cF)||c.g===cF);if(cS==='pa')l.sort((a,b)=>a.p-b.p);else if(cS==='pd')l.sort((a,b)=>b.p-a.p);else l.sort((a,b)=>(a.b+a.m).localeCompare(b.b+b.m));return l}
-function rCat(){
-  const l=gF();document.getElementById('ccnt').textContent=l.length+' '+(lang==='kz'?'автокөлік':'авто');
-  document.getElementById('cg').innerHTML=l.map(c=>{const ic=cL.includes(c.id);return`<div class="cc reveal vis"><div class="cci" onclick="oDet(${c.id})"><img src="${cI(c,'1')}" alt="${c.b} ${c.m}" loading="lazy"><span class="cbg ${bC(c.c)}">${c.c}</span><div class="cdt">${V.map((_,i)=>`<span class="cd${i===0?' on':''}"></span>`).join('')}</div></div><button class="ccb${ic?' on':''}" onclick="event.stopPropagation();tC(${c.id})" title="${t('cm')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg></button><div class="cby"><div class="cn">${c.b} ${c.m}</div><div class="cy">${c.y} · ${c.tp}</div><div class="csp"><div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></div><div class="csv">${c.en}</div></div><div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div class="csv">${c.tr.split('/')[0].trim()}</div></div><div class="csi"><div class="csic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div class="csv">${c.s}</div></div></div><div class="cf"><div class="cp">${c.p.toLocaleString('ru')} ₸<small>${t('pd')}</small></div><button class="bd" onclick="oDet(${c.id})">${t('dt')}</button></div></div></div>`}).join('')}
 
 document.getElementById('flt').addEventListener('click',e=>{if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');cF=e.target.dataset.filter;rCat()});
 document.getElementById('ssel').addEventListener('change',e=>{cS=e.target.value;rCat()});
 
 function tC(id){const i=cL.indexOf(id);if(i>-1)cL.splice(i,1);else{if(cL.length>=4){alert('Макс. 4');return}cL.push(id)}uCUI();rCat()}
-function uCUI(){const bar=document.getElementById('cbar'),it=document.getElementById('cbi'),cn=document.getElementById('cbc'),bg=document.getElementById('cbdg');cL.length>0?(bar.classList.add('on'),bg.classList.add('sh')):(bar.classList.remove('on'),bg.classList.remove('sh'));bg.textContent=cL.length;cn.textContent=cL.length;it.innerHTML=cL.map(id=>{const c=C.find(x=>x.id===id);return`<div class="cbth"><img src="${cI(c,'1')}"><button class="cbrm" onclick="event.stopPropagation();tC(${id})">✕</button></div>`}).join('')}
+function uCUI(){const bar=document.getElementById('cbar'),it=document.getElementById('cbi'),cn=document.getElementById('cbc'),bg=document.getElementById('cbdg');cL.length>0?(bar.classList.add('on'),bg.classList.add('sh')):(bar.classList.remove('on'),bg.classList.remove('sh'));bg.textContent=cL.length;cn.textContent=cL.length;it.innerHTML=cL.map(id=>{const c=C.find(x=>x.id===id);return`<div class="cbth"><img src="${cI(c,selClr[id],'1')}"><button class="cbrm" onclick="event.stopPropagation();tC(${id})">✕</button></div>`}).join('')}
 function openCmp(){if(cL.length<2){alert('Мин. 2');return}document.getElementById('cov').classList.add('on');document.getElementById('cmm').classList.add('on');document.body.style.overflow='hidden';rCTbl()}
 function clCmp(){document.getElementById('cov').classList.remove('on');document.getElementById('cmm').classList.remove('on');document.body.style.overflow=''}
-function rCTbl(){
-  const cc=cL.map(id=>C.find(c=>c.id===id));
-  const sp=[[lang==='kz'?'Түрі':'Тип','tp'],[lang==='kz'?'Жыл':'Год','y'],[lang==='kz'?'Қозғалтқыш':'Двигатель','en'],[lang==='kz'?'Қуат':'Мощность','hp'],['КПП','tr'],[lang==='kz'?'Отын':'Топливо','fu'],[lang==='kz'?'Орын':'Мест','s']];
-  let h=`<table class="ctb"><thead><tr><th></th>`;cc.forEach(c=>{h+=`<th><div class="cch"><div class="ccimg"><img src="${cI(c,'1')}"></div><div class="cctt">${c.b} ${c.m}</div><button class="ccrm" onclick="tC(${c.id});rCTbl();if(cL.length<2)clCmp()">✕</button></div></th>`});h+=`</tr></thead><tbody>`;
-  h+=`<tr><td>${lang==='kz'?'Бағасы':'Цена'}</td>`;const ps=cc.map(c=>c.p),mp=Math.min(...ps);cc.forEach(c=>{h+=`<td class="${c.p===mp?'chl':''}">${c.p.toLocaleString('ru')} ₸</td>`});h+=`</tr>`;
-  sp.forEach(([lb,k])=>{h+=`<tr><td>${lb}</td>`;const vs=cc.map(c=>String(c[k]));const sm=vs.every(v=>v===vs[0]);cc.forEach(c=>{h+=`<td class="${!sm?'chl':''}">${c[k]}</td>`});h+=`</tr>`});
-  h+=`<tr><td></td>`;cc.forEach(c=>{h+=`<td><button class="cbk" onclick="clCmp();openBk('${c.b} ${c.m}')">${t('bk')}</button></td>`});h+=`</tr></tbody></table>`;document.getElementById('ctw').innerHTML=h}
+function rCTbl(){const cc=cL.map(id=>C.find(c=>c.id===id));const sp=[['Тип','tp'],['Год','y'],['Двигатель','en'],['Мощность','hp'],['КПП','tr'],['Топливо','fu'],['Мест','s']];let h=`<table class="ctb"><thead><tr><th></th>`;cc.forEach(c=>{h+=`<th><div class="cch"><div class="ccimg"><img src="${cI(c,selClr[c.id],'1')}"></div><div class="cctt">${c.b} ${c.m}</div><button class="ccrm" onclick="tC(${c.id});rCTbl();if(cL.length<2)clCmp()">✕</button></div></th>`});h+=`</tr></thead><tbody>`;h+=`<tr><td>Цена</td>`;const ps=cc.map(c=>c.p),mp=Math.min(...ps);cc.forEach(c=>{h+=`<td class="${c.p===mp?'chl':''}">${c.p.toLocaleString('ru')} ₸</td>`});h+=`</tr>`;sp.forEach(([lb,k])=>{h+=`<tr><td>${lb}</td>`;const vs=cc.map(c=>String(c[k]));const sm=vs.every(v=>v===vs[0]);cc.forEach(c=>{h+=`<td class="${!sm?'chl':''}">${c[k]}</td>`});h+=`</tr>`});h+=`<tr><td></td>`;cc.forEach(c=>{h+=`<td><button class="cbk" onclick="clCmp();openBk('${c.b} ${c.m}')">Забронировать</button></td>`});h+=`</tr></tbody></table>`;document.getElementById('ctw').innerHTML=h}
 
+// DETAIL with color switching
+let detClr='';
 function oDet(id){
-  const c=C.find(x=>x.id===id);dC=c;dI=0;
+  const c=C.find(x=>x.id===id);dC=c;dI=0;detClr=selClr[id];
   document.getElementById('dov').classList.add('on');document.getElementById('dm').classList.add('on');document.body.style.overflow='hidden';
-  document.getElementById('dg').innerHTML=V.map((v,i)=>`<img src="${cI(c,v)}" alt="${c.sl}-${v}" class="${i===0?'on':''}" onclick="oFs(${c.id},${i})">`).join('')+`<button class="mgn pv" onclick="dPv()">‹</button><button class="mgn nx" onclick="dNx()">›</button>`;
-  document.getElementById('dth').innerHTML=V.map((v,i)=>`<button class="mt${i===0?' on':''}" onclick="sDP(${i})"><img src="${cI(c,v)}"></button>`).join('');
-  const ic=cL.includes(c.id);const ds=lang==='kz'?c.dk:c.d;
-  document.getElementById('dbd').innerHTML=`<span class="mcs ${bC(c.c)}">${c.c}</span><h2 class="mcn">${c.b} ${c.m}</h2><div class="mpb"><span class="mpr">${c.p.toLocaleString('ru')} ₸</span><span class="mpu">${t('pd')}</span></div>
-  <div class="msp"><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></div><div><div class="msl">${lang==='kz'?'Қозғалтқыш':'Двигатель'}</div><div class="msv">${c.en}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="msl">${lang==='kz'?'Қуат':'Мощность'}</div><div class="msv">${c.hp}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div><div><div class="msl">КПП</div><div class="msv">${c.tr}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/></svg></div><div><div class="msl">${lang==='kz'?'Отын':'Топливо'}</div><div class="msv">${c.fu}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><div class="msl">${lang==='kz'?'Орын':'Мест'}</div><div class="msv">${c.s}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div><div><div class="msl">${lang==='kz'?'Жыл':'Год'}</div><div class="msv">${c.y}</div></div></div></div>
+  renderDetGallery(c,detClr);
+  // Color selector in detail
+  document.getElementById('mClrs').innerHTML=c.colors.length>1?
+    `<span class="mClrLabel">Цвет:</span>${c.colors.map(cl=>`<div class="mClrDot${cl===detClr?' on':''}" style="background:${CLR[cl].hex}" title="${CLR[cl].ru}" onclick="switchDetClr(${c.id},'${cl}')"></div>`).join('')}<span class="mClrName">${CLR[detClr].ru}</span>`:'';
+  const ds=lang==='kz'?c.dk:c.d;
+  document.getElementById('dbd').innerHTML=`<span class="mcs ${bC(c.c)}">${c.c}</span><h2 class="mcn">${c.b} ${c.m}</h2><div class="mpb"><span class="mpr">${c.p.toLocaleString('ru')} ₸</span><span class="mpu">/ сутки</span></div>
+  <div class="msp"><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></div><div><div class="msl">Двигатель</div><div class="msv">${c.en}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="msl">Мощность</div><div class="msv">${c.hp}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div><div><div class="msl">КПП</div><div class="msv">${c.tr}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/></svg></div><div><div class="msl">Топливо</div><div class="msv">${c.fu}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><div class="msl">Мест</div><div class="msv">${c.s}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div><div><div class="msl">Год</div><div class="msv">${c.y}</div></div></div></div>
   <div class="mds">${ds}</div>
-  <div class="mac"><button class="ma ma1" onclick="clDet();openBk('${c.b} ${c.m}')">${t('bk')}</button><a href="tel:+77070070107" class="ma ma2">${t('cl')}</a><a href="https://wa.me/77070070107?text=${encodeURIComponent((lang==='kz'?'Сәлеметсіз бе! ':'Здравствуйте! ')+c.b+' '+c.m)}" target="_blank" class="ma ma3">WhatsApp</a><button class="ma ma4" onclick="tC(${c.id});clDet()">${ic?t('rm'):t('cm')}</button></div>`}
+  <div class="mac"><button class="ma ma1" onclick="clDet();openBk('${c.b} ${c.m}')">Забронировать</button><a href="tel:+77070070107" class="ma ma2">Позвонить</a><a href="https://wa.me/77070070107?text=${encodeURIComponent('Здравствуйте! '+c.b+' '+c.m)}" target="_blank" class="ma ma3">WhatsApp</a><button class="ma ma4" onclick="tC(${c.id});clDet()">${cL.includes(c.id)?'Убрать':'Сравнить'}</button></div>`;
+}
+
+function renderDetGallery(c,clr){
+  dI=0;
+  document.getElementById('dg').innerHTML=V.map((v,i)=>`<img src="${cI(c,clr,v)}" alt="${c.sl}-${clr}-${v}" class="${i===0?'on':''}" onclick="oFs(${c.id},${i})">`).join('')+`<button class="mgn pv" onclick="dPv()">‹</button><button class="mgn nx" onclick="dNx()">›</button>`;
+  document.getElementById('dth').innerHTML=V.map((v,i)=>`<button class="mt${i===0?' on':''}" onclick="sDP(${i})"><img src="${cI(c,clr,v)}"></button>`).join('');
+}
+
+function switchDetClr(id,clr){
+  detClr=clr;selClr[id]=clr;
+  const c=C.find(x=>x.id===id);
+  renderDetGallery(c,clr);
+  // Update color dots
+  document.querySelectorAll('#mClrs .mClrDot').forEach(d=>{d.classList.toggle('on',d.title===CLR[clr].ru)});
+  document.querySelector('#mClrs .mClrName').textContent=CLR[clr].ru;
+}
+
 function clDet(){document.getElementById('dov').classList.remove('on');document.getElementById('dm').classList.remove('on');document.body.style.overflow=''}
 function sDP(i){dI=i;document.querySelectorAll('#dg img').forEach((m,x)=>m.classList.toggle('on',x===i));document.querySelectorAll('.mt').forEach((t,x)=>t.classList.toggle('on',x===i))}
 function dPv(){sDP((dI-1+4)%4)}function dNx(){sDP((dI+1)%4)}
 
-function oFs(id,si){const c=C.find(x=>x.id===id);fI=V.map(v=>cI(c,v));fX=si||0;rFs();document.getElementById('fsg').classList.add('on')}
+function oFs(id,si){const c=C.find(x=>x.id===id);const clr=detClr||selClr[id];fI=V.map(v=>cI(c,clr,v));fX=si||0;rFs();document.getElementById('fsg').classList.add('on')}
 function clFs(){document.getElementById('fsg').classList.remove('on')}
 function rFs(){document.getElementById('fsi').src=fI[fX];document.getElementById('fsd').innerHTML=fI.map((_,i)=>`<button class="fdt${i===fX?' on':''}" onclick="fX=${i};rFs()"></button>`).join('')}
 function fPv(){fX=(fX-1+fI.length)%fI.length;rFs()}function fNx(){fX=(fX+1)%fI.length;rFs()}
@@ -464,16 +448,14 @@ let tx=0;document.getElementById('fsg').addEventListener('touchstart',e=>{tx=e.c
 
 function openBk(cn){document.getElementById('bkc').value=cn||'';document.getElementById('bov').classList.add('on');document.getElementById('bm').classList.add('on');document.body.style.overflow='hidden'}
 function clBk(){document.getElementById('bov').classList.remove('on');document.getElementById('bm').classList.remove('on');document.body.style.overflow=''}
-function subBk(){const n=document.getElementById('bkn').value,p=document.getElementById('bkp').value;if(!n||!p){alert(lang==='kz'?'Атыңыз бен телефонды толтырыңыз':'Заполните имя и телефон');return}const c=document.getElementById('bkc').value,d=document.getElementById('bkd').value,y=document.getElementById('bky').value,m=document.getElementById('bkm').value;window.open(`https://wa.me/77070070107?text=Заявка: ${c}%0AИмя: ${n}%0AТел: ${p}%0AДата: ${d}%0AСуток: ${y}%0A${m}`,'_blank');clBk()}
-
+function subBk(){const n=document.getElementById('bkn').value,p=document.getElementById('bkp').value;if(!n||!p){alert('Заполните имя и телефон');return}const c=document.getElementById('bkc').value,d=document.getElementById('bkd').value,y=document.getElementById('bky').value,m=document.getElementById('bkm').value;window.open('https://wa.me/77070070107?text=Заявка: '+c+'%0AИмя: '+n+'%0AТел: '+p+'%0AДата: '+d+'%0AСуток: '+y+'%0A'+m,'_blank');clBk()}
 function togMob(){document.querySelector('.ham').classList.toggle('on');document.querySelector('.mob-m').classList.toggle('on');document.querySelector('.mob-ov').classList.toggle('on')}
+function togTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('tI').innerHTML=n==='dark'?'<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>':'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'}
+function setLang(l){lang=l;document.querySelectorAll('.lang-b').forEach(b=>b.classList.toggle('on',b.textContent.trim()===(l==='ru'?'RU':'ҚЗ')))}
 
-// SMART SCROLL UP
 const sIds=['hero','catalog','advantages','conditions','contacts'];
-function gSecs(){return sIds.map(id=>document.getElementById(id)).filter(Boolean)}
-function smartUp(){const ss=gSecs();const sy=window.scrollY+80;for(let i=ss.length-1;i>=0;i--){const top=ss[i].offsetTop;if(sy>top+10){window.scrollTo({top:top-60,behavior:'smooth'});return}}window.scrollTo({top:0,behavior:'smooth'})}
+function smartUp(){const ss=sIds.map(id=>document.getElementById(id)).filter(Boolean);const sy=window.scrollY+80;for(let i=ss.length-1;i>=0;i--){if(sy>ss[i].offsetTop+10){window.scrollTo({top:ss[i].offsetTop-60,behavior:'smooth'});return}}window.scrollTo({top:0,behavior:'smooth'})}
 window.addEventListener('scroll',()=>{document.getElementById('su').classList.toggle('sh',window.scrollY>300)});
-
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){clFs();clDet();clCmp();clBk()}if(document.getElementById('fsg').classList.contains('on')){if(e.key==='ArrowLeft')fPv();if(e.key==='ArrowRight')fNx()}});
 const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
