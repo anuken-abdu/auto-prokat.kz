@@ -52,16 +52,8 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .mob-info p{font-size:.75rem;color:var(--text3);margin-bottom:4px}
 .mob-dev{margin-top:14px;font-size:.68rem;color:var(--text3)}
 .mob-dev a{font-size:.68rem;color:var(--gold);font-weight:800;display:inline;border:none;padding:0}
-.hero{position:relative;height:100vh;height:100dvh;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;padding-top:56px;text-align:center}
-.hero-vid{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-.hero-ov{position:absolute;inset:0;z-index:1;background:linear-gradient(to bottom,rgba(0,0,0,.55) 0%,rgba(0,0,0,.35) 50%,rgba(0,0,0,.65) 100%)}
-.hero-c{position:relative;z-index:2;padding:0 20px 90px}
-.hero h1{font-family:var(--fh);font-size:clamp(2rem,7vw,4.5rem);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-1px;text-transform:uppercase}
-.hero h1 span{display:block;font-family:var(--fh);font-weight:500;font-size:clamp(1.1rem,3.2vw,1.8rem);letter-spacing:3px;color:#fff;text-transform:uppercase;margin-top:10px}
-.hero-sc{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,.35);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:6px;animation:fl 2s ease-in-out infinite}
-.hero-sc i{width:1px;height:28px;background:rgba(255,255,255,.25);display:block}
-@keyframes fl{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
 .sec{padding:50px 0}@media(min-width:768px){.sec{padding:72px 0}}
+#catalog{padding-top:80px}@media(min-width:768px){#catalog{padding-top:104px}}
 .sl{font-size:.62rem;font-weight:800;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
 .st{font-family:var(--fh);font-weight:900;font-size:clamp(1.4rem,4vw,2.3rem);color:var(--text);line-height:1.15;text-transform:uppercase;letter-spacing:-.5px}
 .ss{color:var(--text3);margin-top:6px;font-size:.82rem;max-width:480px}
@@ -93,15 +85,6 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 [data-theme="light"] .bv{background:#f5f0e0;color:#7a6020;border-color:#c8a24e}
 .ccb{position:absolute;top:8px;right:8px;width:30px;height:30px;border-radius:6px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#fff;transition:var(--t);z-index:2}
 .ccb:hover,.ccb.on{background:var(--gold);color:#000}
-
-/* COLOR DOTS */
-.clrRow{display:flex;gap:5px;padding:8px 12px;align-items:center}
-.clrLabel{font-size:.58rem;color:var(--text3);margin-right:4px}
-.clrDot{width:18px;height:18px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:var(--t);position:relative}
-.clrDot:hover{transform:scale(1.15)}
-.clrDot.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
-.clrDot::after{content:'';position:absolute;inset:2px;border-radius:50%;border:1px solid rgba(255,255,255,.15)}
-
 .cby{padding:12px}
 .cn{font-family:var(--fh);font-size:.82rem;font-weight:800;color:var(--text);text-transform:uppercase;letter-spacing:.3px}
 .cy{font-size:.68rem;color:var(--text3);margin-top:1px}
@@ -139,17 +122,29 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .ftc a{display:flex;align-items:center;gap:5px;color:var(--text3);font-size:.78rem;padding:2px 0;transition:var(--t)}.ftc a:hover{color:var(--gold)}
 .ftb{margin-top:24px;padding-top:14px;border-top:1px solid var(--border);display:flex;flex-direction:column;align-items:center;gap:4px}
 .ftcp{font-size:.68rem;color:var(--text3)}.ftdv{font-size:.66rem;color:var(--text3)}.ftdv a{color:var(--gold);font-weight:800}
-.botb{position:fixed;bottom:0;left:0;right:0;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:800;display:flex;padding:5px 0 calc(5px + env(safe-area-inset-bottom,0px))}
+
+/* BOTTOM BAR - BRIGHT BUTTONS */
+.botb{position:fixed;bottom:0;left:0;right:0;background:var(--glass);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:800;display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));gap:5px}
 @media(min-width:1024px){.botb{display:none}}
-.bbb{flex:1;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 0;color:var(--text3);font-size:.55rem;font-weight:700;transition:var(--t);position:relative;text-transform:uppercase;letter-spacing:.3px}
-.bbb:hover,.bbb.on{color:var(--text)}.bbb svg{width:18px;height:18px}
-.bbdg{position:absolute;top:0;right:calc(50% - 15px);width:14px;height:14px;border-radius:50%;background:var(--gold);color:#000;font-size:.5rem;font-weight:800;display:none;align-items:center;justify-content:center}.bbdg.sh{display:flex}
-body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
-.su{position:fixed;bottom:70px;right:14px;width:40px;height:40px;border-radius:50%;background:var(--text);color:var(--bg);display:flex;align-items:center;justify-content:center;z-index:850;opacity:0;pointer-events:none;transition:var(--t);box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.bbb{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:6px 0;color:var(--text3);font-size:.55rem;font-weight:700;transition:var(--t);position:relative;text-transform:uppercase;letter-spacing:.3px;border-radius:9px}
+.bbb:hover,.bbb.on{color:var(--text)}.bbb svg{width:20px;height:20px}
+.bbdg{position:absolute;top:2px;right:calc(50% - 16px);width:14px;height:14px;border-radius:50%;background:var(--gold);color:#000;font-size:.5rem;font-weight:800;display:none;align-items:center;justify-content:center}.bbdg.sh{display:flex}
+
+/* BRIGHT call & WhatsApp buttons */
+.bbb-call{background:linear-gradient(135deg,#2962FF,#1E88E5);color:#fff !important;box-shadow:0 3px 12px rgba(41,98,255,.45);animation:pulseCall 2.4s ease-in-out infinite}
+.bbb-call:hover{background:linear-gradient(135deg,#1E88E5,#1565C0);color:#fff !important;transform:translateY(-2px)}
+.bbb-wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff !important;box-shadow:0 3px 12px rgba(37,211,102,.5);animation:pulseWa 2.4s ease-in-out infinite .6s}
+.bbb-wa:hover{background:linear-gradient(135deg,#128C7E,#075E54);color:#fff !important;transform:translateY(-2px)}
+.bbb-call svg,.bbb-wa svg{width:22px;height:22px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.25))}
+@keyframes pulseCall{0%,100%{box-shadow:0 3px 12px rgba(41,98,255,.45)}50%{box-shadow:0 3px 20px rgba(41,98,255,.8)}}
+@keyframes pulseWa{0%,100%{box-shadow:0 3px 12px rgba(37,211,102,.5)}50%{box-shadow:0 3px 20px rgba(37,211,102,.85)}}
+
+body{padding-bottom:64px}@media(min-width:1024px){body{padding-bottom:0}}
+.su{position:fixed;bottom:78px;right:14px;width:40px;height:40px;border-radius:50%;background:var(--text);color:var(--bg);display:flex;align-items:center;justify-content:center;z-index:850;opacity:0;pointer-events:none;transition:var(--t);box-shadow:0 2px 10px rgba(0,0,0,.3)}
 @media(min-width:1024px){.su{bottom:20px;right:20px}}
 .su.sh{opacity:1;pointer-events:auto}.su:hover{background:var(--gold);color:#000;transform:scale(1.1)}.su svg{width:18px;height:18px}
 .cbar{position:fixed;bottom:-100px;left:50%;transform:translateX(-50%);z-index:900;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:8px 16px;display:flex;align-items:center;gap:10px;box-shadow:var(--shadow);transition:.4s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(14px);max-width:90vw}
-.cbar.on{bottom:70px}@media(min-width:1024px){.cbar.on{bottom:16px}}
+.cbar.on{bottom:78px}@media(min-width:1024px){.cbar.on{bottom:16px}}
 .cbi{display:flex;gap:4px}
 .cbth{width:40px;height:30px;border-radius:5px;overflow:hidden;border:1px solid var(--border);position:relative}.cbth img{width:100%;height:100%;object-fit:cover}
 .cbrm{position:absolute;top:-3px;right:-3px;width:13px;height:13px;border-radius:50%;background:#e53935;color:#fff;font-size:7px;display:flex;align-items:center;justify-content:center;border:none;line-height:1}
@@ -168,11 +163,6 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 .mgn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);color:#000;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:var(--t);border:none}.mgn:hover{background:var(--gold)}.mgn.pv{left:8px}.mgn.nx{right:8px}
 .mth{display:flex;gap:5px;padding:8px 14px;overflow-x:auto}
 .mt{width:56px;height:40px;border-radius:5px;overflow:hidden;flex-shrink:0;border:2px solid transparent;cursor:pointer;transition:var(--t);background:none;padding:0}.mt.on{border-color:var(--gold)}.mt img{width:100%;height:100%;object-fit:cover}
-/* Detail color selector */
-.mClrs{display:flex;gap:6px;align-items:center;padding:8px 14px;border-bottom:1px solid var(--border)}
-.mClrLabel{font-size:.6rem;color:var(--text3);margin-right:4px;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-.mClrDot{width:22px;height:22px;border-radius:50%;border:2px solid var(--border);cursor:pointer;transition:var(--t)}.mClrDot:hover{transform:scale(1.15)}.mClrDot.on{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold)}
-.mClrName{font-size:.6rem;color:var(--text2);margin-left:4px;font-weight:600}
 .mbd{padding:18px 14px 24px}@media(min-width:768px){.mbd{padding:22px 24px 28px}}
 .mcs{display:inline-block;padding:3px 8px;border-radius:5px;font-size:.58rem;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
 .mcn{font-family:var(--fh);font-size:1.2rem;font-weight:900;color:var(--text);margin-top:5px;text-transform:uppercase;letter-spacing:.5px}
@@ -244,13 +234,6 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
   <div class="mob-dev">Разработчик сайта — <a href="https://wa.me/77074534518" target="_blank">Anuken</a></div>
 </nav>
 
-<section class="hero" id="hero">
-  <video class="hero-vid" autoplay muted loop playsinline><source src="hero-bg.mp4" type="video/mp4"></video>
-  <div class="hero-ov"></div>
-  <div class="hero-c"><h1>QAZ AUTO RENT<span>Аренда автомобилей в Алматы</span></h1></div>
-  <div class="hero-sc"><span>Листайте</span><i></i></div>
-</section>
-
 <section class="sec" id="catalog"><div class="con">
   <div class="sl">Автопарк</div>
   <h2 class="st reveal">Выберите автомобиль</h2>
@@ -304,13 +287,13 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 <div class="botb">
   <a href="#catalog" class="bbb on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg><span>Каталог</span></a>
   <button class="bbb" onclick="openCmp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg><span class="bbdg" id="cbdg">0</span><span>Сравнить</span></button>
-  <a href="tel:+77070070107" class="bbb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.876.37 1.79.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c1.02.33 1.93.57 2.81.7A2 2 0 0122 16.92z"/></svg><span>Звонок</span></a>
-  <a href="https://wa.me/77070070107" target="_blank" class="bbb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>WhatsApp</a>
+  <a href="tel:+77070070107" class="bbb bbb-call"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg><span>Звонок</span></a>
+  <a href="https://wa.me/77070070107" target="_blank" class="bbb bbb-wa"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg><span>WhatsApp</span></a>
 </div>
 <button class="su" id="su" onclick="smartUp()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
 <div class="cbar" id="cbar"><div class="cbi" id="cbi"></div><div class="cblb"><span id="cbc">0</span> авто</div><button class="bcg" onclick="openCmp()">Сравнить</button></div>
 <div class="mov" id="dov" onclick="clDet()"></div>
-<div class="mbx dm" id="dm"><button class="mcl" onclick="clDet()">✕</button><div class="mg" id="dg"></div><div class="mClrs" id="mClrs"></div><div class="mth" id="dth"></div><div class="mbd" id="dbd"></div></div>
+<div class="mbx dm" id="dm"><button class="mcl" onclick="clDet()">✕</button><div class="mg" id="dg"></div><div class="mth" id="dth"></div><div class="mbd" id="dbd"></div></div>
 <div class="mov co2" id="cov" onclick="clCmp()"></div>
 <div class="mbx cm" id="cmm"><div class="cmh"><h2>Сравнение</h2><button class="cmcl" onclick="clCmp()">✕</button></div><div class="ctw" id="ctw"></div></div>
 <div class="fs" id="fsg"><button class="fsc" onclick="clFs()">✕</button><button class="fsn pv" onclick="fPv()">‹</button><img class="fsi" id="fsi" src="" alt=""><button class="fsn nx" onclick="fNx()">›</button><div class="fsd" id="fsd"></div></div>
@@ -319,37 +302,30 @@ body{padding-bottom:56px}@media(min-width:1024px){body{padding-bottom:0}}
 <div class="bkf"><div class="fg"><label>Автомобиль</label><input id="bkc" readonly></div><div class="fg"><label>Ваше имя</label><input id="bkn"></div><div class="fg"><label>Телефон</label><input type="tel" id="bkp" placeholder="+7"></div><div class="fg"><label>Дата начала</label><input type="date" id="bkd"></div><div class="fg"><label>Кол-во суток</label><input type="number" id="bky" min="1" value="1"></div><div class="fg"><label>Комментарий</label><textarea id="bkm"></textarea></div><button class="bsb" onclick="subBk()">Отправить заявку</button></div></div>
 
 <script>
-// COLOR MAP: key=slug, hex=display, name=folder name
-const CLR={white:{hex:'#f0f0f0',n:'white',ru:'Белый',kz:'Ақ'},black:{hex:'#222',n:'black',ru:'Чёрный',kz:'Қара'},blue:{hex:'#1565c0',n:'blue',ru:'Синий',kz:'Көк'},green:{hex:'#2e7d32',n:'green',ru:'Зелёный',kz:'Жасыл'}};
-
 const C=[
-{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:15000,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",colors:['white','blue'],d:"Надёжный и экономичный седан для города.",dk:"Үнемді қалалық седан."},
-{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:20000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",colors:['white','black'],d:"Стильный седан с комфортным салоном.",dk:"Стильді седан."},
-{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",colors:['white'],d:"Легендарная Corolla — надёжность.",dk:"Аңызға айналған Corolla."},
-{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",colors:['white'],d:"Кроссовер для загородных поездок.",dk:"Тау жолдарына кроссовер."},
-{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:25000,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",colors:['green','black','white'],d:"Новое поколение с камерами.",dk:"Жаңа буын."},
-{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:25000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",colors:['blue','white'],d:"Бизнес-классика.",dk:"Бизнес-классика."},
-{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",colors:['white','black'],d:"Обновлённая Camry.",dk:"Жаңартылған Camry."},
-{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",colors:['white'],d:"Премиальный дизайн.",dk:"Премиум дизайн."},
-{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",colors:['white'],d:"Тишина и комфорт.",dk:"Тыныштық, жайлылық."},
-{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",colors:['white','black','blue'],d:"Спортивный бизнес.",dk:"Спорттық бизнес."},
-{id:11,b:"KIA",m:"K5",y:"2020–2023",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",colors:['white'],d:"Яркий и технологичный.",dk:"Жарқын, технологиялық."},
-{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:40000,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",colors:['black'],d:"Легенда бездорожья. 7 мест.",dk:"7 орын, V6."},
-{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:50000,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",colors:['white'],d:"Тишина и статус.",dk:"Мәртебе."},
-{id:14,b:"BMW",m:"530i",y:"2018–2021",p:60000,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",colors:['white','black'],d:"Динамика и технологии.",dk:"Динамика."},
-{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:60000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",colors:['black'],d:"Флагман Toyota. 7 мест.",dk:"Toyota флагманы."},
-{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",colors:['white'],d:"Вершина роскоши. V8.",dk:"Сәнділік шыңы."},
-{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",colors:['black'],d:"Гелендваген AMG. 507 л.с.",dk:"AMG. 507 ж.к."}
+{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:15000,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",d:"Надёжный и экономичный седан для города.",dk:"Үнемді қалалық седан."},
+{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:20000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",d:"Стильный седан с комфортным салоном.",dk:"Стильді седан."},
+{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",d:"Легендарная Corolla — надёжность.",dk:"Аңызға айналған Corolla."},
+{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",d:"Кроссовер для загородных поездок.",dk:"Тау жолдарына кроссовер."},
+{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:25000,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",d:"Новое поколение с камерами.",dk:"Жаңа буын."},
+{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:25000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",d:"Бизнес-классика.",dk:"Бизнес-классика."},
+{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",d:"Обновлённая Camry.",dk:"Жаңартылған Camry."},
+{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",d:"Премиальный дизайн.",dk:"Премиум дизайн."},
+{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",d:"Тишина и комфорт.",dk:"Тыныштық, жайлылық."},
+{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",d:"Спортивный бизнес.",dk:"Спорттық бизнес."},
+{id:11,b:"KIA",m:"K5",y:"2020–2023",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",d:"Яркий и технологичный.",dk:"Жарқын, технологиялық."},
+{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:40000,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",d:"Легенда бездорожья. 7 мест.",dk:"7 орын, V6."},
+{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:50000,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",d:"Тишина и статус.",dk:"Мәртебе."},
+{id:14,b:"BMW",m:"530i",y:"2018–2021",p:60000,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",d:"Динамика и технологии.",dk:"Динамика."},
+{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:60000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",d:"Флагман Toyota. 7 мест.",dk:"Toyota флагманы."},
+{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",d:"Вершина роскоши. V8.",dk:"Сәнділік шыңы."},
+{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",d:"Гелендваген AMG. 507 л.с.",dk:"AMG. 507 ж.к."}
 ];
 
-const V=['1','2','3','4'];
-// Photo path: images/slug-color-N.jpg
-function cI(c,clr,v){return'images/'+c.sl+'-'+clr+'-'+v+'.jpg'}
+// 3 фото на авто: images/{slug}-1.jpg, images/{slug}-2.jpg, images/{slug}-3.jpg
+const V=['1','2','3'];
+function cI(c,v){return'images/'+c.sl+'-'+v+'.jpg'}
 function bC(c){if(c.includes('VIP'))return'bv';if(c.includes('Прем'))return'bp';if(c.includes('Биз'))return'bb';if(c.includes('Ком'))return'bc';return'be'}
-
-// Track selected color per car
-let selClr={};
-C.forEach(c=>{selClr[c.id]=c.colors[0]});
 
 let cL=[],cF='all',cS='pa',lang='ru',dI=0,dC=null,fI=[],fX=0;
 
@@ -357,16 +333,14 @@ function rCat(){
   const l=gF();document.getElementById('ccnt').textContent=l.length+' авто';
   document.getElementById('cg').innerHTML=l.map(c=>{
     const ic=cL.includes(c.id);
-    const clr=selClr[c.id];
     return`<div class="cc reveal vis" id="card-${c.id}">
       <div class="cci" onclick="oDet(${c.id})">
-        <img id="cimg-${c.id}" src="${cI(c,clr,'1')}" alt="${c.b} ${c.m}" loading="lazy">
+        <img src="${cI(c,'1')}" alt="${c.b} ${c.m}" loading="lazy">
         <span class="cbg ${bC(c.c)}">${c.c}</span>
       </div>
       <button class="ccb${ic?' on':''}" onclick="event.stopPropagation();tC(${c.id})">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3l4 4-4 4M20 7H4M8 21l-4-4 4-4M4 17h16"/></svg>
       </button>
-      ${c.colors.length>1?`<div class="clrRow"><span class="clrLabel">Цвет:</span>${c.colors.map(cl=>`<div class="clrDot${cl===clr?' on':''}" style="background:${CLR[cl].hex}" title="${CLR[cl].ru}" onclick="event.stopPropagation();switchClr(${c.id},'${cl}')"></div>`).join('')}</div>`:''}
       <div class="cby">
         <div class="cn">${c.b} ${c.m}</div>
         <div class="cy">${c.y} · ${c.tp}</div>
@@ -383,37 +357,21 @@ function rCat(){
     </div>`}).join('');
 }
 
-function switchClr(id,clr){
-  selClr[id]=clr;
-  const c=C.find(x=>x.id===id);
-  // Update card image
-  const img=document.getElementById('cimg-'+id);
-  if(img)img.src=cI(c,clr,'1');
-  // Update dots
-  const card=document.getElementById('card-'+id);
-  if(card)card.querySelectorAll('.clrDot').forEach(d=>{d.classList.toggle('on',d.title===CLR[clr].ru)});
-}
-
 function gF(){let l=[...C];if(cF!=='all')l=l.filter(c=>c.c.startsWith(cF)||c.g===cF);if(cS==='pa')l.sort((a,b)=>a.p-b.p);else if(cS==='pd')l.sort((a,b)=>b.p-a.p);else l.sort((a,b)=>(a.b+a.m).localeCompare(b.b+b.m));return l}
 
 document.getElementById('flt').addEventListener('click',e=>{if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');cF=e.target.dataset.filter;rCat()});
 document.getElementById('ssel').addEventListener('change',e=>{cS=e.target.value;rCat()});
 
 function tC(id){const i=cL.indexOf(id);if(i>-1)cL.splice(i,1);else{if(cL.length>=4){alert('Макс. 4');return}cL.push(id)}uCUI();rCat()}
-function uCUI(){const bar=document.getElementById('cbar'),it=document.getElementById('cbi'),cn=document.getElementById('cbc'),bg=document.getElementById('cbdg');cL.length>0?(bar.classList.add('on'),bg.classList.add('sh')):(bar.classList.remove('on'),bg.classList.remove('sh'));bg.textContent=cL.length;cn.textContent=cL.length;it.innerHTML=cL.map(id=>{const c=C.find(x=>x.id===id);return`<div class="cbth"><img src="${cI(c,selClr[id],'1')}"><button class="cbrm" onclick="event.stopPropagation();tC(${id})">✕</button></div>`}).join('')}
+function uCUI(){const bar=document.getElementById('cbar'),it=document.getElementById('cbi'),cn=document.getElementById('cbc'),bg=document.getElementById('cbdg');cL.length>0?(bar.classList.add('on'),bg.classList.add('sh')):(bar.classList.remove('on'),bg.classList.remove('sh'));bg.textContent=cL.length;cn.textContent=cL.length;it.innerHTML=cL.map(id=>{const c=C.find(x=>x.id===id);return`<div class="cbth"><img src="${cI(c,'1')}"><button class="cbrm" onclick="event.stopPropagation();tC(${id})">✕</button></div>`}).join('')}
 function openCmp(){if(cL.length<2){alert('Мин. 2');return}document.getElementById('cov').classList.add('on');document.getElementById('cmm').classList.add('on');document.body.style.overflow='hidden';rCTbl()}
 function clCmp(){document.getElementById('cov').classList.remove('on');document.getElementById('cmm').classList.remove('on');document.body.style.overflow=''}
-function rCTbl(){const cc=cL.map(id=>C.find(c=>c.id===id));const sp=[['Тип','tp'],['Год','y'],['Двигатель','en'],['Мощность','hp'],['КПП','tr'],['Топливо','fu'],['Мест','s']];let h=`<table class="ctb"><thead><tr><th></th>`;cc.forEach(c=>{h+=`<th><div class="cch"><div class="ccimg"><img src="${cI(c,selClr[c.id],'1')}"></div><div class="cctt">${c.b} ${c.m}</div><button class="ccrm" onclick="tC(${c.id});rCTbl();if(cL.length<2)clCmp()">✕</button></div></th>`});h+=`</tr></thead><tbody>`;h+=`<tr><td>Цена</td>`;const ps=cc.map(c=>c.p),mp=Math.min(...ps);cc.forEach(c=>{h+=`<td class="${c.p===mp?'chl':''}">${c.p.toLocaleString('ru')} ₸</td>`});h+=`</tr>`;sp.forEach(([lb,k])=>{h+=`<tr><td>${lb}</td>`;const vs=cc.map(c=>String(c[k]));const sm=vs.every(v=>v===vs[0]);cc.forEach(c=>{h+=`<td class="${!sm?'chl':''}">${c[k]}</td>`});h+=`</tr>`});h+=`<tr><td></td>`;cc.forEach(c=>{h+=`<td><button class="cbk" onclick="clCmp();openBk('${c.b} ${c.m}')">Забронировать</button></td>`});h+=`</tr></tbody></table>`;document.getElementById('ctw').innerHTML=h}
+function rCTbl(){const cc=cL.map(id=>C.find(c=>c.id===id));const sp=[['Тип','tp'],['Год','y'],['Двигатель','en'],['Мощность','hp'],['КПП','tr'],['Топливо','fu'],['Мест','s']];let h=`<table class="ctb"><thead><tr><th></th>`;cc.forEach(c=>{h+=`<th><div class="cch"><div class="ccimg"><img src="${cI(c,'1')}"></div><div class="cctt">${c.b} ${c.m}</div><button class="ccrm" onclick="tC(${c.id});rCTbl();if(cL.length<2)clCmp()">✕</button></div></th>`});h+=`</tr></thead><tbody>`;h+=`<tr><td>Цена</td>`;const ps=cc.map(c=>c.p),mp=Math.min(...ps);cc.forEach(c=>{h+=`<td class="${c.p===mp?'chl':''}">${c.p.toLocaleString('ru')} ₸</td>`});h+=`</tr>`;sp.forEach(([lb,k])=>{h+=`<tr><td>${lb}</td>`;const vs=cc.map(c=>String(c[k]));const sm=vs.every(v=>v===vs[0]);cc.forEach(c=>{h+=`<td class="${!sm?'chl':''}">${c[k]}</td>`});h+=`</tr>`});h+=`<tr><td></td>`;cc.forEach(c=>{h+=`<td><button class="cbk" onclick="clCmp();openBk('${c.b} ${c.m}')">Забронировать</button></td>`});h+=`</tr></tbody></table>`;document.getElementById('ctw').innerHTML=h}
 
-// DETAIL with color switching
-let detClr='';
 function oDet(id){
-  const c=C.find(x=>x.id===id);dC=c;dI=0;detClr=selClr[id];
+  const c=C.find(x=>x.id===id);dC=c;dI=0;
   document.getElementById('dov').classList.add('on');document.getElementById('dm').classList.add('on');document.body.style.overflow='hidden';
-  renderDetGallery(c,detClr);
-  // Color selector in detail
-  document.getElementById('mClrs').innerHTML=c.colors.length>1?
-    `<span class="mClrLabel">Цвет:</span>${c.colors.map(cl=>`<div class="mClrDot${cl===detClr?' on':''}" style="background:${CLR[cl].hex}" title="${CLR[cl].ru}" onclick="switchDetClr(${c.id},'${cl}')"></div>`).join('')}<span class="mClrName">${CLR[detClr].ru}</span>`:'';
+  renderDetGallery(c);
   const ds=lang==='kz'?c.dk:c.d;
   document.getElementById('dbd').innerHTML=`<span class="mcs ${bC(c.c)}">${c.c}</span><h2 class="mcn">${c.b} ${c.m}</h2><div class="mpb"><span class="mpr">${c.p.toLocaleString('ru')} ₸</span><span class="mpu">/ сутки</span></div>
   <div class="msp"><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/></svg></div><div><div class="msl">Двигатель</div><div class="msv">${c.en}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="msl">Мощность</div><div class="msv">${c.hp}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/></svg></div><div><div class="msl">КПП</div><div class="msv">${c.tr}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18"/></svg></div><div><div class="msl">Топливо</div><div class="msv">${c.fu}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div><div><div class="msl">Мест</div><div class="msv">${c.s}</div></div></div><div class="ms"><div class="msi"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg></div><div><div class="msl">Год</div><div class="msv">${c.y}</div></div></div></div>
@@ -421,26 +379,17 @@ function oDet(id){
   <div class="mac"><button class="ma ma1" onclick="clDet();openBk('${c.b} ${c.m}')">Забронировать</button><a href="tel:+77070070107" class="ma ma2">Позвонить</a><a href="https://wa.me/77070070107?text=${encodeURIComponent('Здравствуйте! '+c.b+' '+c.m)}" target="_blank" class="ma ma3">WhatsApp</a><button class="ma ma4" onclick="tC(${c.id});clDet()">${cL.includes(c.id)?'Убрать':'Сравнить'}</button></div>`;
 }
 
-function renderDetGallery(c,clr){
+function renderDetGallery(c){
   dI=0;
-  document.getElementById('dg').innerHTML=V.map((v,i)=>`<img src="${cI(c,clr,v)}" alt="${c.sl}-${clr}-${v}" class="${i===0?'on':''}" onclick="oFs(${c.id},${i})">`).join('')+`<button class="mgn pv" onclick="dPv()">‹</button><button class="mgn nx" onclick="dNx()">›</button>`;
-  document.getElementById('dth').innerHTML=V.map((v,i)=>`<button class="mt${i===0?' on':''}" onclick="sDP(${i})"><img src="${cI(c,clr,v)}"></button>`).join('');
-}
-
-function switchDetClr(id,clr){
-  detClr=clr;selClr[id]=clr;
-  const c=C.find(x=>x.id===id);
-  renderDetGallery(c,clr);
-  // Update color dots
-  document.querySelectorAll('#mClrs .mClrDot').forEach(d=>{d.classList.toggle('on',d.title===CLR[clr].ru)});
-  document.querySelector('#mClrs .mClrName').textContent=CLR[clr].ru;
+  document.getElementById('dg').innerHTML=V.map((v,i)=>`<img src="${cI(c,v)}" alt="${c.sl}-${v}" class="${i===0?'on':''}" onclick="oFs(${c.id},${i})">`).join('')+`<button class="mgn pv" onclick="dPv()">‹</button><button class="mgn nx" onclick="dNx()">›</button>`;
+  document.getElementById('dth').innerHTML=V.map((v,i)=>`<button class="mt${i===0?' on':''}" onclick="sDP(${i})"><img src="${cI(c,v)}"></button>`).join('');
 }
 
 function clDet(){document.getElementById('dov').classList.remove('on');document.getElementById('dm').classList.remove('on');document.body.style.overflow=''}
 function sDP(i){dI=i;document.querySelectorAll('#dg img').forEach((m,x)=>m.classList.toggle('on',x===i));document.querySelectorAll('.mt').forEach((t,x)=>t.classList.toggle('on',x===i))}
-function dPv(){sDP((dI-1+4)%4)}function dNx(){sDP((dI+1)%4)}
+function dPv(){sDP((dI-1+V.length)%V.length)}function dNx(){sDP((dI+1)%V.length)}
 
-function oFs(id,si){const c=C.find(x=>x.id===id);const clr=detClr||selClr[id];fI=V.map(v=>cI(c,clr,v));fX=si||0;rFs();document.getElementById('fsg').classList.add('on')}
+function oFs(id,si){const c=C.find(x=>x.id===id);fI=V.map(v=>cI(c,v));fX=si||0;rFs();document.getElementById('fsg').classList.add('on')}
 function clFs(){document.getElementById('fsg').classList.remove('on')}
 function rFs(){document.getElementById('fsi').src=fI[fX];document.getElementById('fsd').innerHTML=fI.map((_,i)=>`<button class="fdt${i===fX?' on':''}" onclick="fX=${i};rFs()"></button>`).join('')}
 function fPv(){fX=(fX-1+fI.length)%fI.length;rFs()}function fNx(){fX=(fX+1)%fI.length;rFs()}
@@ -453,7 +402,7 @@ function togMob(){document.querySelector('.ham').classList.toggle('on');document
 function togTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('tI').innerHTML=n==='dark'?'<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>':'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'}
 function setLang(l){lang=l;document.querySelectorAll('.lang-b').forEach(b=>b.classList.toggle('on',b.textContent.trim()===(l==='ru'?'RU':'ҚЗ')))}
 
-const sIds=['hero','catalog','advantages','conditions','contacts'];
+const sIds=['catalog','advantages','conditions','contacts'];
 function smartUp(){const ss=sIds.map(id=>document.getElementById(id)).filter(Boolean);const sy=window.scrollY+80;for(let i=ss.length-1;i>=0;i--){if(sy>ss[i].offsetTop+10){window.scrollTo({top:ss[i].offsetTop-60,behavior:'smooth'});return}}window.scrollTo({top:0,behavior:'smooth'})}
 window.addEventListener('scroll',()=>{document.getElementById('su').classList.toggle('sh',window.scrollY>300)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){clFs();clDet();clCmp();clBk()}if(document.getElementById('fsg').classList.contains('on')){if(e.key==='ArrowLeft')fPv();if(e.key==='ArrowRight')fNx()}});
