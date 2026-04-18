@@ -48,6 +48,10 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 .mob-m.on{right:0}
 .mob-m a{color:var(--text2);font-size:.95rem;font-weight:700;padding:14px 0;border-bottom:1px solid var(--border);transition:var(--t);display:block}
 .mob-m a:hover{color:var(--text);padding-left:6px}
+.mob-grp{margin-top:6px}
+.mob-grp-t{font-size:.62rem;font-weight:800;color:var(--gold);letter-spacing:2px;text-transform:uppercase;padding:14px 0 6px;border-bottom:1px solid var(--border);margin-bottom:4px}
+.mob-m a.mob-car{font-size:.78rem;font-weight:600;padding:9px 0 9px 10px;border-bottom:1px dashed var(--border);color:var(--text2)}
+.mob-m a.mob-car:hover{color:var(--gold);padding-left:14px}
 .mob-info{margin-top:auto;padding-top:20px;border-top:1px solid var(--border)}
 .mob-info p{font-size:.75rem;color:var(--text3);margin-bottom:4px}
 .mob-dev{margin-top:14px;font-size:.68rem;color:var(--text3)}
@@ -69,9 +73,9 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}button{bor
 @media(min-width:1200px){.cg{grid-template-columns:repeat(4,1fr)}}
 .cc{background:var(--card);border-radius:var(--r);overflow:hidden;border:1px solid var(--border);transition:var(--t);position:relative}
 .cc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:var(--text3)}
-.cci{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg3);cursor:pointer}
-.cci img{width:100%;height:100%;object-fit:cover;transition:.5s ease}
-.cc:hover .cci img{transform:scale(1.04)}
+.cci{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--bg3);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.cci img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;transition:.5s ease}
+.cc:hover .cci img{transform:scale(1.03)}
 .cbg{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:5px;font-size:.58rem;font-weight:800;letter-spacing:.4px;text-transform:uppercase}
 .be{background:#1a1a1a;color:#4caf50;border:1px solid #2e7d32}
 .bc{background:#1a1a1a;color:#42a5f5;border:1px solid #1976d2}
@@ -230,16 +234,17 @@ body{padding-bottom:64px}@media(min-width:1024px){body{padding-bottom:0}}
   <a href="#catalog" onclick="togMob()">Каталог</a><a href="#advantages" onclick="togMob()">Преимущества</a><a href="#conditions" onclick="togMob()">Условия</a><a href="#contacts" onclick="togMob()">Контакты</a>
   <a href="javascript:void(0)" onclick="togMob();openBk()">Забронировать</a>
   <a href="tel:+77070070107">+7 707 007 01 07</a><a href="https://wa.me/77070070107" target="_blank">WhatsApp</a><a href="https://t.me/+77070070107" target="_blank">Telegram</a>
+  <div id="mobBrands"></div>
   <div class="mob-info"><p>Аренда авто в Алматы. Ежедневно.</p><p>г. Алматы, Казахстан</p></div>
   <div class="mob-dev">Разработчик сайта — <a href="https://wa.me/77074534518" target="_blank">Anuken</a></div>
 </nav>
 
 <section class="sec" id="catalog"><div class="con">
   <div class="sl">Автопарк</div>
-  <h2 class="st reveal">Выберите автомобиль</h2>
-  <p class="ss reveal">17 автомобилей от эконом до VIP. Цены за сутки.</p>
+  <h2 class="st reveal">Выберите автомобиль и получите скидку до 15%</h2>
+  <p class="ss reveal">18 автомобилей от эконом до VIP. Цены за сутки.</p>
   <div class="flt reveal" id="flt"><button class="fb on" data-filter="all">Все</button><button class="fb" data-filter="Эконом">Эконом</button><button class="fb" data-filter="Комфорт">Комфорт</button><button class="fb" data-filter="Бизнес">Бизнес</button><button class="fb" data-filter="Премиум">Премиум</button><button class="fb" data-filter="VIP">VIP</button></div>
-  <div class="catbar reveal"><div class="ccnt" id="ccnt"></div><select class="ssel" id="ssel"><option value="pa">По цене ↑</option><option value="pd">По цене ↓</option><option value="n">По названию</option></select></div>
+  <div class="catbar reveal"><div class="ccnt" id="ccnt"></div><select class="ssel" id="ssel"><option value="pa">По цене ↑</option><option value="pd">По цене ↓</option><option value="y">По году выпуска</option></select></div>
   <div class="cg" id="cg"></div>
 </div></section>
 
@@ -303,23 +308,24 @@ body{padding-bottom:64px}@media(min-width:1024px){body{padding-bottom:0}}
 
 <script>
 const C=[
-{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:15000,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",d:"Надёжный и экономичный седан для города.",dk:"Үнемді қалалық седан."},
-{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:20000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",d:"Стильный седан с комфортным салоном.",dk:"Стильді седан."},
-{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",d:"Легендарная Corolla — надёжность.",dk:"Аңызға айналған Corolla."},
-{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:25000,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",d:"Кроссовер для загородных поездок.",dk:"Тау жолдарына кроссовер."},
-{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:25000,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",d:"Новое поколение с камерами.",dk:"Жаңа буын."},
-{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:25000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",d:"Бизнес-классика.",dk:"Бизнес-классика."},
-{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",d:"Обновлённая Camry.",dk:"Жаңартылған Camry."},
-{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:30000,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",d:"Премиальный дизайн.",dk:"Премиум дизайн."},
-{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",d:"Тишина и комфорт.",dk:"Тыныштық, жайлылық."},
-{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",d:"Спортивный бизнес.",dk:"Спорттық бизнес."},
-{id:11,b:"KIA",m:"K5",y:"2020–2023",p:35000,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",d:"Яркий и технологичный.",dk:"Жарқын, технологиялық."},
-{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:40000,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",d:"Легенда бездорожья. 7 мест.",dk:"7 орын, V6."},
-{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:50000,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",d:"Тишина и статус.",dk:"Мәртебе."},
-{id:14,b:"BMW",m:"530i",y:"2018–2021",p:60000,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",d:"Динамика и технологии.",dk:"Динамика."},
-{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:60000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",d:"Флагман Toyota. 7 мест.",dk:"Toyota флагманы."},
-{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",d:"Вершина роскоши. V8.",dk:"Сәнділік шыңы."},
-{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:70000,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",d:"Гелендваген AMG. 507 л.с.",dk:"AMG. 507 ж.к."}
+{id:1,b:"HYUNDAI",m:"ACCENT",y:"2015–2020",p:14990,c:"Эконом",g:"Эконом",tp:"Седан",en:"1.6L",hp:"123 л.с.",tr:"АКПП / МКПП",fu:"Бензин",s:5,sl:"accent",d:"Надёжный и экономичный седан для города.",dk:"Үнемді қалалық седан."},
+{id:2,b:"HYUNDAI",m:"ELANTRA",y:"2017–2018",p:19990,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra",d:"Стильный седан с комфортным салоном.",dk:"Стильді седан."},
+{id:3,b:"TOYOTA",m:"COROLLA",y:"2020–2023",p:24990,c:"Комфорт",g:"Комфорт",tp:"Седан",en:"1.6L",hp:"122 л.с.",tr:"CVT",fu:"Бензин",s:5,sl:"corolla",d:"Легендарная Corolla — надёжность.",dk:"Аңызға айналған Corolla."},
+{id:4,b:"HYUNDAI",m:"CRETA",y:"2020–2023",p:24990,c:"Комфорт",g:"Комфорт",tp:"Кроссовер",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"creta",d:"Кроссовер для загородных поездок.",dk:"Тау жолдарына кроссовер."},
+{id:5,b:"HYUNDAI",m:"ELANTRA",y:"2021–2023",p:24990,c:"Комфорт+",g:"Комфорт",tp:"Седан",en:"2.0L",hp:"150 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"elantra-new",d:"Новое поколение с камерами.",dk:"Жаңа буын."},
+{id:6,b:"TOYOTA",m:"CAMRY 50",y:"2012–2014",p:24990,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry50",d:"Бизнес-классика.",dk:"Бизнес-классика."},
+{id:7,b:"TOYOTA",m:"CAMRY 55",y:"2014–2017",p:29990,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"181 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry55",d:"Обновлённая Camry.",dk:"Жаңартылған Camry."},
+{id:8,b:"HYUNDAI",m:"SONATA",y:"2020–2023",p:29990,c:"Бизнес",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"180 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"sonata",d:"Премиальный дизайн.",dk:"Премиум дизайн."},
+{id:9,b:"LEXUS",m:"ES 250",y:"2013–2016",p:34990,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"184 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"es250",d:"Тишина и комфорт.",dk:"Тыныштық, жайлылық."},
+{id:10,b:"TOYOTA",m:"CAMRY 70",y:"2018–2020",p:34990,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry70",d:"Спортивный бизнес.",dk:"Спорттық бизнес."},
+{id:11,b:"KIA",m:"K5",y:"2020–2023",p:34990,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"194 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"k5",d:"Яркий и технологичный.",dk:"Жарқын, технологиялық."},
+{id:18,b:"TOYOTA",m:"CAMRY 75",y:"2021–2024",p:39990,c:"Бизнес+",g:"Бизнес",tp:"Седан",en:"2.5L",hp:"200 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"camry75",d:"Новейшая Camry 75 — топовая комплектация.",dk:"Жаңа буын Camry 75."},
+{id:12,b:"TOYOTA",m:"LAND CRUISER PRADO",y:"2012–2015",p:39990,c:"Премиум",g:"Премиум",tp:"Внедорожник",en:"4.0L V6",hp:"249 л.с.",tr:"АКПП",fu:"Бензин",s:7,sl:"prado",d:"Легенда бездорожья. 7 мест.",dk:"7 орын, V6."},
+{id:13,b:"LEXUS",m:"RX 300",y:"2019–2023",p:49990,c:"Премиум",g:"Премиум",tp:"Кроссовер",en:"2.0T",hp:"238 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"rx300",d:"Тишина и статус.",dk:"Мәртебе."},
+{id:14,b:"BMW",m:"530i",y:"2018–2021",p:59990,c:"Премиум",g:"Премиум",tp:"Седан",en:"2.0T",hp:"252 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"bmw530",d:"Динамика и технологии.",dk:"Динамика."},
+{id:15,b:"TOYOTA",m:"LAND CRUISER 200",y:"2013–2015",p:59990,c:"VIP",g:"VIP",tp:"Внедорожник",en:"4.5 V8",hp:"235 л.с.",tr:"АКПП",fu:"Дизель",s:7,sl:"lc200",d:"Флагман Toyota. 7 мест.",dk:"Toyota флагманы."},
+{id:16,b:"LEXUS",m:"LX 570",y:"2011–2015",p:69990,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.7 V8",hp:"367 л.с.",tr:"АКПП",fu:"Бензин",s:8,sl:"lx570",d:"Вершина роскоши. V8.",dk:"Сәнділік шыңы."},
+{id:17,b:"MERCEDES-BENZ",m:"G 55 AMG",y:"2007–2010",p:69990,c:"VIP",g:"VIP",tp:"Внедорожник",en:"5.5 V8",hp:"507 л.с.",tr:"АКПП",fu:"Бензин",s:5,sl:"g55",d:"Гелендваген AMG. 507 л.с.",dk:"AMG. 507 ж.к."}
 ];
 
 // 3 фото на авто: images/{slug}-1.jpg, images/{slug}-2.jpg, images/{slug}-3.jpg
@@ -357,7 +363,7 @@ function rCat(){
     </div>`}).join('');
 }
 
-function gF(){let l=[...C];if(cF!=='all')l=l.filter(c=>c.c.startsWith(cF)||c.g===cF);if(cS==='pa')l.sort((a,b)=>a.p-b.p);else if(cS==='pd')l.sort((a,b)=>b.p-a.p);else l.sort((a,b)=>(a.b+a.m).localeCompare(b.b+b.m));return l}
+function gF(){let l=[...C];if(cF!=='all')l=l.filter(c=>c.c.startsWith(cF)||c.g===cF);if(cS==='pa')l.sort((a,b)=>a.p-b.p);else if(cS==='pd')l.sort((a,b)=>b.p-a.p);else l.sort((a,b)=>{const ay=parseInt((a.y.match(/\d{4}/g)||['0']).slice(-1)[0]);const by=parseInt((b.y.match(/\d{4}/g)||['0']).slice(-1)[0]);return by-ay});return l}
 
 document.getElementById('flt').addEventListener('click',e=>{if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');cF=e.target.dataset.filter;rCat()});
 document.getElementById('ssel').addEventListener('change',e=>{cS=e.target.value;rCat()});
@@ -402,13 +408,40 @@ function togMob(){document.querySelector('.ham').classList.toggle('on');document
 function togTheme(){const h=document.documentElement,n=h.getAttribute('data-theme')==='dark'?'light':'dark';h.setAttribute('data-theme',n);document.getElementById('tI').innerHTML=n==='dark'?'<path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>':'<circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>'}
 function setLang(l){lang=l;document.querySelectorAll('.lang-b').forEach(b=>b.classList.toggle('on',b.textContent.trim()===(l==='ru'?'RU':'ҚЗ')))}
 
-const sIds=['catalog','advantages','conditions','contacts'];
-function smartUp(){const ss=sIds.map(id=>document.getElementById(id)).filter(Boolean);const sy=window.scrollY+80;for(let i=ss.length-1;i>=0;i--){if(sy>ss[i].offsetTop+10){window.scrollTo({top:ss[i].offsetTop-60,behavior:'smooth'});return}}window.scrollTo({top:0,behavior:'smooth'})}
+function rMobBrands(){
+  const grp={};
+  C.forEach(c=>{if(!grp[c.b])grp[c.b]=[];grp[c.b].push(c)});
+  const order=['HYUNDAI','TOYOTA','LEXUS','KIA','BMW','MERCEDES-BENZ'];
+  let h='';
+  order.forEach(br=>{
+    if(!grp[br])return;
+    h+=`<div class="mob-grp"><div class="mob-grp-t">${br}</div>`;
+    grp[br].forEach(c=>{
+      h+=`<a class="mob-car" href="#car-${c.sl}" onclick="togMob();openCarBySlug('${c.sl}');return false">${c.m}</a>`;
+    });
+    h+='</div>';
+  });
+  document.getElementById('mobBrands').innerHTML=h;
+}
+function openCarBySlug(sl){
+  const c=C.find(x=>x.sl===sl);
+  if(c){history.replaceState(null,'','#car-'+sl);setTimeout(()=>oDet(c.id),250)}
+}
+window.addEventListener('load',()=>{
+  const h=window.location.hash;
+  if(h&&h.startsWith('#car-')){
+    const sl=h.replace('#car-','');
+    const c=C.find(x=>x.sl===sl);
+    if(c)setTimeout(()=>oDet(c.id),400);
+  }
+});
+
+function smartUp(){window.scrollTo({top:0,behavior:'smooth'})}
 window.addEventListener('scroll',()=>{document.getElementById('su').classList.toggle('sh',window.scrollY>300)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){clFs();clDet();clCmp();clBk()}if(document.getElementById('fsg').classList.contains('on')){if(e.key==='ArrowLeft')fPv();if(e.key==='ArrowRight')fNx()}});
 const obs=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis')})},{threshold:.06});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-rCat();uCUI();
+rCat();uCUI();rMobBrands();
 </script>
 </body>
 </html>
